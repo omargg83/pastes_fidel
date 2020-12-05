@@ -1,5 +1,5 @@
 <?php
-$server=2;
+$server=3;
 $_SESSION['pagina']=100;
 
   if($server==2){
@@ -7,7 +7,7 @@ $_SESSION['pagina']=100;
     define("MYSQLUSER", "root");
     define("MYSQLPASS", "root");
     define("SERVIDOR", "localhost");
-    define("BDD", "sagycrmr_nala");
+    define("BDD", "sagycrmr_pastes_fidel");
     define("PORT", "3306");
     define("SERVER", "LOCALHOST");
     $_SESSION['des']=1;
@@ -17,7 +17,7 @@ $_SESSION['pagina']=100;
     define("MYSQLUSER", "sagyccom_esponda");
     define("MYSQLPASS", "esponda123$");
     define("SERVIDOR", "sagyc.com.mx");
-    define("BDD", "sagycrmr_nala");
+    define("BDD", "sagycrmr_pastes_fidel");
     define("PORT", "3306");
     define("SERVER", "NUBE");
     $_SESSION['des']=0;

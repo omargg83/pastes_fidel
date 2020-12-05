@@ -1,5 +1,5 @@
 <?php
-	session_name("chingon");
+	session_name("pastes_fidel");
 	@session_start();
 	if (isset($_REQUEST['function'])){$function=clean_var($_REQUEST['function']);}	else{ $function="";}
 	if (isset($_REQUEST['ctrl'])){$ctrl=clean_var($_REQUEST['ctrl']);}	else{ $ctrl="";}
