@@ -17,6 +17,7 @@
 	$color="";
 	$archivo="";
 	$cate=$db->categoria();
+
 	if($idcatalogo>0){
 		$pd = $db->producto_edit($idcatalogo);
 		$codigo=$pd->codigo;
@@ -27,7 +28,7 @@
 		$descripcion=$pd->descripcion;
 		$tipo=$pd->tipo;
 		$activo_catalogo=$pd->activo_catalogo;
-		$categoria=$pd->categoria;
+		$categoria=$pd->idcategoria;
 		$color=$pd->color;
 		$archivo=$pd->archivo;
 	}
@@ -101,10 +102,10 @@
 						<div class='row'>
 							<div class='col-12 col-xl col-auto'>
 								<label>categoría</label>
-								<select class='form-control form-control-sm' name='categoria' id='categoria'>
+								<select class='form-control form-control-sm' name='idcategoria' id='idcategoria'>
 									<?php
 									foreach($cate as $key){
-										echo  "<option value='".$key->idcat."' "; if($categoria==$key->idcat){ echo " selected";} echo ">".$key->nombre."</option>";
+										echo  "<option value='".$key->idcategoria."' "; if($categoria==$key->idcategoria){ echo " selected";} echo ">".$key->nombre."</option>";
 									}?>
 								</select>
 							</div>

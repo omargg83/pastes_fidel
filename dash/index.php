@@ -40,7 +40,7 @@ echo "<div class='container-fluid'>";
 
 		}
 
-		if(array_key_exists('CITAS', $db->derecho)){
+/*		if(array_key_exists('CITAS', $db->derecho)){
 			echo "<div class='col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 p-1'>
 				<div class='dash_icon'>
 					<div class='row'>
@@ -57,7 +57,7 @@ echo "<div class='container-fluid'>";
 		  </div>";
 
 		}
-
+*/
 		if(array_key_exists('PRODUCTOS', $db->derecho)){
 			echo "<div class='col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 p-1'>
 				<div class='dash_icon'>
