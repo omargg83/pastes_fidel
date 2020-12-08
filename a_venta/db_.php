@@ -31,21 +31,18 @@ class Venta extends Sagyc{
 			die();
 		}
 	}
-
 	public function sucursal_info(){
 		$sql="select * from sucursal where idsucursal='".$_SESSION['idsucursal']."'";
 		$sth = $this->dbh->prepare($sql);
 		$sth->execute();
 		return $sth->fetch(PDO::FETCH_OBJ);
 	}
-
 	public function tienda_info(){
 		$sql="select * from tienda where idtienda='".$_SESSION['idtienda']."'";
 		$sth = $this->dbh->prepare($sql);
 		$sth->execute();
 		return $sth->fetch(PDO::FETCH_OBJ);
 	}
-
 	public function venta($id){
 		$sql="select * from venta where idventa='$id'";
 		$sth = $this->dbh->prepare($sql);
@@ -513,6 +510,31 @@ class Venta extends Sagyc{
 		$x=$this->update('venta',array('idventa'=>$idventa), $arreglo);
 		return $x;
 	}
+	public function categoria_lista(){
+		try{
+			$sql="SELECT * FROM categorias where idtienda='".$_SESSION['idtienda']."'";
+			$sth = $this->dbh->prepare($sql);
+			$sth->execute();
+			return $sth->fetchAll(PDO::FETCH_OBJ);
+		}
+		catch(PDOException $e){
+			return "Database access FAILED!".$e->getMessage();
+		}
+	}
+	public function productos_lista($idcategoria){
+		try{
+			$sql="SELECT * from productos left outer join productos_catalogo on productos_catalogo.idcatalogo=productos.idcatalogo
+			where productos_catalogo.idcategoria=$idcategoria";
+			$sth = $this->dbh->prepare($sql);
+			$sth->execute();
+			return $sth->fetchAll(PDO::FETCH_OBJ);
+		}
+		catch(PDOException $e){
+			return "Database access FAILED!".$e->getMessage();
+		}
+	}
+
+
 }
 
 $db = new Venta();

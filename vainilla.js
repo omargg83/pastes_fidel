@@ -462,6 +462,31 @@ $(document).on('click',"[is*='is-finedit']",function(e){
     }
   });
 });
+
+$(document).on('click',"[is*='p-categoria']",function(e){
+  e.preventDefault();
+  cargando(true);
+
+  let idcategoria=e.currentTarget.attributes.v_idcategoria.nodeValue;
+  let idventa=document.getElementById("idventa").value;
+  var formData = new FormData();
+  formData.append("idventa", idventa);
+  formData.append("idcategoria", idcategoria);
+
+  let xhr = new XMLHttpRequest();
+  xhr.open('POST',"a_venta/lista_productos.php");
+  xhr.addEventListener('load',(data)=>{
+    document.getElementById("resultadosx").innerHTML =data.target.response;
+    cargando(false);
+  });
+  xhr.onerror =  ()=>{
+    cargando(false);
+  };
+  xhr.send(formData);
+});
+
+
+
 function calcular(){
   let idproducto=document.getElementById("idproducto").value;
   let cantidad=document.getElementById("cantidad").value;

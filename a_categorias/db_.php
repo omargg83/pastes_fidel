@@ -55,7 +55,7 @@ class Categoria extends Sagyc{
 	}
 	public function categoria($id){
 		try{
-		  $sql="select * from categorias where idcat=:id";
+		  $sql="select * from categorias where idcategoria=:id";
 		  $sth = $this->dbh->prepare($sql);
 		  $sth->bindValue(":id",$id);
 		  $sth->execute();
@@ -68,32 +68,31 @@ class Categoria extends Sagyc{
 	public function guardar_categoria(){
 		$x="";
 		$arreglo =array();
-		$idcat=$_REQUEST['idcat'];
+		$idcategoria=$_REQUEST['idcategoria'];
 		if (isset($_REQUEST['nombre'])){
 			$arreglo+=array('nombre'=>$_REQUEST['nombre']);
 		}
 
-		if($idcat==0){
+		if($idcategoria==0){
 			$arreglo+=array('idtienda'=>$_SESSION['idtienda']);
 			$x=$this->insert('categorias', $arreglo);
 		}
 		else{
-			$x=$this->update('categorias',array('idcat'=>$idcat), $arreglo);
+			$x=$this->update('categorias',array('idcategoria'=>$idcategoria), $arreglo);
 		}
 		return $x;
 	}
 	public function borrar_categoria(){
-		if (isset($_REQUEST['id'])){ $id=$_REQUEST['id']; }
-		return $this->borrar('categorias',"id",$id);
+		if (isset($_REQUEST['idcategoria'])){ $idcategoria=$_REQUEST['idcategoria']; }
+		return $this->borrar('categorias',"idcategoria",$id);
 	}
 	public function foto_cat(){
 		$x="";
 		$arreglo =array();
-		$idcat=$_REQUEST['idcat'];
+		$idcategoria=$_REQUEST['idcategoria'];
 
-		$sql="select * from categorias where idcat=:id";
+		$sql="select * from categorias where idcategoria=$idcategoria";
 		$sth = $this->dbh->prepare($sql);
-		$sth->bindValue(":idcat",$idcat);
 		$sth->execute();
 		$prod=$sth->fetch(PDO::FETCH_OBJ);
 
@@ -122,7 +121,7 @@ class Categoria extends Sagyc{
 				exit;
 			}
 		}
-		return $this->update('categorias',array('idcat'=>$idcat), $arreglo);
+		return $this->update('categorias',array('idcategoria'=>$idcategoria), $arreglo);
 
 	}
 }

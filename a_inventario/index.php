@@ -24,7 +24,7 @@
 
         <li class='nav-item active'><a class='nav-link barranav' is='a-link' title='Mostrar todo' id='lista_servicios' des='a_inventario/lista_servicios' dix='trabajo'><i class='fab fa-servicestack'></i><span>Servicios</span></a></li>
 
-        <li class='nav-item active'><a class='nav-link barranav' is='a-link' title='Mostrar todo' id='lista_servicios' des='a_inventario/excel' dix='trabajo'><i class="far fa-file-excel"></i><span>Excel</span></a></li>
+
 
         <?php
         	if(array_key_exists('PRODUCTOS', $db->derecho)){
@@ -39,6 +39,8 @@
             echo "<li class='nav-item active'><a class='nav-link barranav' is='a-link' title='Mostrar todo' id='cate_nue' des='a_inventario/duplicados'  dix='trabajo'><i class='fas fa-box'></i><span>Duplicados</span></a></li>";
           }
         ?>
+
+        <li class='nav-item active'><a class='nav-link barranav' is='a-link' title='Mostrar todo' id='lista_servicios' des='a_inventario/excel' dix='trabajo'><i class="far fa-file-excel"></i><span>Excel</span></a></li>
 
         <li class='nav-item active'><a class='nav-link barranav izq' is='a-link' title='Nuevo' id='new_poliza' des='a_inventario/agregar' v_id='0' dix='trabajo'><i class='fas fa-cloud-download-alt'></i><span>Agregar producto</span></a></li>
 
