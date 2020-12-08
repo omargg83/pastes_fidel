@@ -67,7 +67,7 @@
 
 					}
 
-					if ( $key->esquema==2) {
+			/*		if ( $key->esquema==2) {
 
 						if ($key->v_cantidad < $key->mayoreo_cantidad) {
 							echo "<div class='col-4 text-right'>";
@@ -88,7 +88,7 @@
 								$total=$key->v_precio_distribuidor;
 							echo "</div>";
 						}
-					}
+					} 
 
 
 					else if ( $key->esquema==1) {
@@ -137,7 +137,7 @@
 
 						///////////////////////////////////////
 
-				}
+				} */
 
 					///////////////////////// fin comparacion esquemas
 
