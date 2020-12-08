@@ -150,7 +150,7 @@
 						 <label><b>Existencias</b></label>
 						 <input type="text" class="form-control form-control-sm" id="tmp_ex" name='tmp_ex' placeholder="Existencias" value="<?php echo $exist; ?>" readonly>
 						</div>
-
+						<!--
 						<div class="col-12 col-xl col-auto">
 						 <label>Precio compra</label>
 						 <input type="text" class="form-control form-control-sm" id="preciocompra" name='preciocompra' placeholder="Precio" value="<?php echo $preciocompra; ?>">
@@ -159,14 +159,14 @@
 						<div class="col-12 col-xl col-auto">
 						 <label>Stock Minimo</label>
 						 <input type="text" class="form-control form-control-sm" id="stockmin" name='stockmin' placeholder="Stock Minimo" value="<?php echo $stockmin; ?>">
-						</div>
+					 </div> -->
 
 						<div class="col-12 col-xl col-auto">
 						 <label>$ Venta</label>
 						 <input type="text" class="form-control form-control-sm" id="precio" name='precio' placeholder="Precio" value="<?php echo $precio; ?>" required>
 						</div>
 
-						<div class="col-12 col-xl col-auto">
+						<!--<div class="col-12 col-xl col-auto">
 						 <label>$ Mayoreo</label>
 						 <input type="text" class="form-control form-control-sm" id="precio_mayoreo" name='precio_mayoreo' placeholder="Precio Mayoreo" value="<?php echo $precio_mayoreo; ?>">
 						</div>
@@ -174,10 +174,10 @@
 						<div class="col-12 col-xl col-auto">
 						 <label>$ Distribuidor</label>
 						 <input type="text" class="form-control form-control-sm" id="precio_distri" name='precio_distri' placeholder="Precio Distribuidor" value="<?php echo $precio_distri; ?>">
-						</div>
+						</div>	-->
 
 					</div>
-					<hr>
+		<!--			<hr>
 			<div class='row mb-3'>
 						<div class='col-12 col-xl col-auto'>
 							<p><b>Esquema de descuento:</b></p>
@@ -223,7 +223,7 @@
 						</div>
 
 					</div>
-				</div>
+				</div>  -->
 			<div class='card-footer'>
 				<div class='row'>
 					<div class='col-12 col-xl col-auto'>
