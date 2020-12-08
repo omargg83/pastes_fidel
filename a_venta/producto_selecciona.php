@@ -77,10 +77,10 @@
 					echo "<input type='number' min=0 max=9999 class='form-control' is='f-cantidad' name='cantidad' id='cantidad' value='1' required>";
 				echo "</div>";
 
-		/*		echo "<div class='col-sm-6 col-md-12 col-lg-4 col-xl-4'>";
+				echo "<div class='col-sm-6 col-md-12 col-lg-4 col-xl-4'>";
 					echo "<label><b>Precio a aplicar x Unidad</b></label>";
 					echo "<input type='text' class='form-control' name='precio' id='precio' value='".$producto->precio."' readonly>";
-				echo "</div>"; */
+				echo "</div>"; 
 
 				echo "<div class='col-sm-6 col-md-12 col-lg-4 col-xl-4'>";
 					echo "<label><b>Existencia</b>:</label>";
