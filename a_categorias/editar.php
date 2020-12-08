@@ -3,14 +3,12 @@
 	if (isset($_REQUEST['idcat'])){$idcat=$_REQUEST['idcat'];} else{ $idcat=0;}
 
 	$nombre="";
-
-
+	$archivo="";
 	if($idcat>0){
 		$pd = $db->categoria($idcat);
 		$nombre=$pd->nombre;
-
+		$archivo=$pd->archivo;
 	}
-
 ?>
 
 <div class="container">
@@ -22,6 +20,19 @@
 			</div>
 			<div class='card-body'>
 				<div class='row'>
+					<?php
+						echo "<div class='col-xl col-auto'>";
+
+							if(strlen($archivo)>0 and file_exists("../".$db->f_categoria."/".$archivo)){
+								echo "<img src='".$db->f_categoria."/".$archivo."' width='100px' class='img-thumbnail'/>";
+							}
+							else{
+								echo "<img src='img/unnamed.png' width='100px' class='img-thumbnail'/>";
+							}
+
+						echo "</div>";
+					?>
+
 					<div class="col-xl col-auto">
 						<label>Nombre categoría:</label>
 							<input type="text" class="form-control form-control-sm" name="nombre" id="nombre" value="<?php echo $nombre;?>" placeholder="Nombre" required maxlength="55">
@@ -34,6 +45,14 @@
 					<div class="col-xl col-auto">
 
 						<button class="btn btn-warning btn-sm" type="submit"><i class='far fa-save'></i>Guardar</button>
+						<?php
+
+							echo "<button class='btn btn-warning btn-sm' type='button' is='b-link' des='a_categorias/form_foto' v_idcat='$idcat' omodal='1'><i class='fas fa-camera'></i>Foto</button>";
+
+						 ?>
+
+
+
 						<button type='button' class='btn btn-warning btn-sm' id='lista_penarea' is='b-link'  des='a_categorias/lista' dix='trabajo' title='regresar'><i class='fas fa-undo-alt'></i>Regresar</button>
 
 					</div>

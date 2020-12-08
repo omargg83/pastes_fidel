@@ -86,6 +86,45 @@ class Categoria extends Sagyc{
 		if (isset($_REQUEST['id'])){ $id=$_REQUEST['id']; }
 		return $this->borrar('categorias',"id",$id);
 	}
+	public function foto_cat(){
+		$x="";
+		$arreglo =array();
+		$idcat=$_REQUEST['idcat'];
+
+		$sql="select * from categorias where idcat=:id";
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue(":idcat",$idcat);
+		$sth->execute();
+		$prod=$sth->fetch(PDO::FETCH_OBJ);
+
+		if(strlen($prod->archivo)>0){
+			$ruta = '../'.$this->f_categoria.$prod->archivo;
+			if (file_exists($ruta)){
+				unlink($ruta);
+			}
+		}
+		$extension = '';
+		$ruta = '../'.$this->f_categoria;
+		$archivo = $_FILES['foto']['tmp_name'];
+		$nombrearchivo = $_FILES['foto']['name'];
+		$tmp=$_FILES['foto']['tmp_name'];
+		$info = pathinfo($nombrearchivo);
+		if($archivo!=""){
+			$extension = $info['extension'];
+			if ($extension=='png' || $extension=='PNG' || $extension=='jpg'  || $extension=='JPG') {
+				$nombreFile = "resp_".date("YmdHis").rand(0000,9999).".".$extension;
+				move_uploaded_file($tmp,$ruta.$nombreFile);
+				$ruta=$ruta."/".$nombreFile;
+				$arreglo+=array('archivo'=>$nombreFile);
+			}
+			else{
+				echo "fail";
+				exit;
+			}
+		}
+		return $this->update('categorias',array('idcat'=>$idcat), $arreglo);
+
+	}
 }
 
 $db = new Categoria();
