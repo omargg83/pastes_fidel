@@ -53,7 +53,7 @@
   	<div class='card'>
       <div class='card-header'>
         <div class='row'>
-          <div class='col-8 text-center'>
+          <div class='col-sm-12 col-md-12 col-lg-12 col-xl-8'>
             Venta :<?php echo $numero_compra; ?>
             <span id='div_comanda'>
               <?php echo "--(".$comanda.")"; ?>
@@ -62,12 +62,30 @@
               <?php echo " * ".$estado_compra." * "; ?>
             </span>
           </div>
-          <div class='col-4 text-right'>
+          <div class='col-sm-12 col-md-12 col-lg-12 col-xl-4'>
             <?php
               if($estado_compra=="Activa"){
                 if($_SESSION['a_sistema']==1){
                   if($db->nivel_captura==1){
                     echo "<button type='button' class='btn btn-warning btn-sm' id='finalizar' is='is-finalizar'><i class='fas fa-cash-register'></i>Finalizar</button>";
+                  }
+                }
+              }
+              else{
+                if($_SESSION['a_sistema']==1){
+                  echo "<button type='button' class='btn btn-warning btn-sm mr-2' id='nueva' is='b-link' des='a_venta/venta' dix='trabajo'><i class='fas fa-cash-register'></i>Nueva</button>";
+
+                  if ($tamanoticket==0) {
+                    echo "<button type='button' class='btn btn-warning btn-sm mr-2'  id='print_persona' is='b-print' title='Editar' des='a_venta/imprimir' dix='trabajo' v_idventa='$idventa'><i class='fas fa-print'></i>Imprimir</button>";
+                  }
+                  else {
+                    echo "<button type='button' class='btn btn-warning btn-sm mr-2'  id='print_persona' is='b-print' title='Editar' des='a_venta/imprimir88mm' dix='trabajo' v_idventa='$idventa'><i class='fas fa-print'></i>Imprimir</button>";
+                  }
+                  if($estado_compra=="Pagada"){
+                    echo "<button type='button' class='btn btn-warning btn-sm' is='b-link' db='a_venta/db_' des='a_venta/venta' desid='idventa' fun='editar_venta' dix='trabajo' id='eliminar' v_idventa='$idventa' tp='¿Desea editar la venta seleccionada?'><i class='fas fa-user-edit'></i>Editar</button>";
+                  }
+                  if($estado_compra=="Editar"){
+                    echo "<button type='button' class='btn btn-success btn-sm mr-2' id='finedit' is='is-finedit'><i class='fas fa-cash-register'></i>Finalizar</button>";
                   }
                 }
               }
@@ -105,40 +123,6 @@
               ?>
             </div>
 
-            <div class='row mb-3'>
-              <div class='col-12'>
-              <?php
-                if($estado_compra=="Activa"){
-                  if($_SESSION['a_sistema']==1){
-                    //echo "<button class='btn btn-warning btn-sm mr-2' type='button' is='b-link' des='a_venta/cliente_busca' dix='trabajo' omodal='1'><i class='fas fa-user-tag'></i>Cliente</button>";
-                    //echo "<button class='btn btn-warning btn-sm mr-2' type='button' is='b-link' des='a_venta/form_comanda' dix='trabajo' omodal='1'><i class='fas fa-clipboard-list'></i>+ Comanda</button>";
-
-                    if($db->nivel_captura==1){
-                      //echo "<button type='button' class='btn btn-warning btn-sm mr-2' id='finalizar' is='is-finalizar'><i class='fas fa-cash-register'></i>Finalizar</button>";
-    								}
-                  }
-                }
-                else{
-                  if($_SESSION['a_sistema']==1){
-                    echo "<button type='button' class='btn btn-warning btn-sm mr-2' id='nueva' is='b-link' des='a_venta/venta' dix='trabajo'><i class='fas fa-cash-register'></i>Nueva</button>";
-
-                    if ($tamanoticket==0) {
-                      echo "<button type='button' class='btn btn-warning btn-sm mr-2'  id='print_persona' is='b-print' title='Editar' des='a_venta/imprimir' dix='trabajo' v_idventa='$idventa'><i class='fas fa-print'></i>Imprimir</button>";
-                    }
-                    else {
-                      echo "<button type='button' class='btn btn-warning btn-sm mr-2'  id='print_persona' is='b-print' title='Editar' des='a_venta/imprimir88mm' dix='trabajo' v_idventa='$idventa'><i class='fas fa-print'></i>Imprimir</button>";
-                    }
-                    if($estado_compra=="Pagada"){
-                      echo "<button type='button' class='btn btn-warning btn-sm' is='b-link' db='a_venta/db_' des='a_venta/venta' desid='idventa' fun='editar_venta' dix='trabajo' id='eliminar' v_idventa='$idventa' tp='¿Desea editar la venta seleccionada?'><i class='fas fa-user-edit'></i>Editar</button>";
-                    }
-                    if($estado_compra=="Editar"){
-                      echo "<button type='button' class='btn btn-success btn-sm mr-2' id='finedit' is='is-finedit'><i class='fas fa-cash-register'></i>Finalizar</button>";
-                    }
-                  }
-                }
-              ?>
-              </div>
-            </div>
             <div class='row' >
               <div class='col-12' id='lista' style='min-height:300px; overflow:auto;'>
                 <?php
