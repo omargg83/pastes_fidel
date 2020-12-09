@@ -527,7 +527,7 @@ class Productos extends Sagyc{
 		LEFT OUTER JOIN productos_catalogo ON productos_catalogo.idcatalogo = productos.idcatalogo
 		LEFT OUTER JOIN sucursal ON sucursal.idsucursal = productos.idsucursal
 		LEFT OUTER JOIN bodega ON bodega.idproducto = productos.idproducto
-		LEFT OUTER JOIN categorias ON categorias.idcat =productos_catalogo.categoria
+		LEFT OUTER JOIN categorias ON categorias.idcategoria =productos_catalogo.idcategoria
 		where productos.idsucursal='".$_SESSION['idsucursal']."' group by productos.idproducto ";
 		$sth = $this->dbh->prepare($sql);
 		$sth->execute();
