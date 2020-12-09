@@ -370,7 +370,6 @@ $(document).on('click',"[is*='is-cliente']",function(e){
     cargando(false);
   };
   xhr.send(formData);
-
 });
 $(document).on('click',"[is*='is-finalizar']",function(e){
   e.preventDefault();
@@ -484,7 +483,12 @@ $(document).on('click',"[is*='p-categoria']",function(e){
   };
   xhr.send(formData);
 });
+$(document).on('submit',"[is*='f-comanda']",function(e){
+  e.preventDefault();
 
+  let idventa=document.getElementById("idventa").value;
+  alert("entra");
+});
 
 
 function calcular(){
