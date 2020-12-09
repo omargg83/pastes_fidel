@@ -29,12 +29,12 @@
 	echo "<div class='container'>";
 	echo "<div class='tabla_css' id='tabla_css'>";
 		echo "<div class='row header-row'>";
-			echo "<div class='col-12 col-xl col-auto'><i class='far fa-lightbulb' title='Estatus'></i></div>";
-			echo "<div class='col-12 col-xl col-auto'><i class='fas fa-cubes' title='Stock'></i></div>";
-			echo "<div class='col-12 col-xl col-auto'><i class='far fa-file-alt' title='Descripción'></i></div>";
-			echo "<div class='col-12 col-xl col-auto'><i class='fas fa-dollar-sign' title='Precio' ></i></div>";
-			echo "<div class='col-12 col-xl col-auto'><i class='fas fa-dollar-sign' title='Precio Mayoreo' >M</i></div>";
-			echo "<div class='col-12 col-xl col-auto'><i class='fas fa-dollar-sign' title='Precio Distribuidor' >D</i></div>";
+			echo "<div class='col-12 col-xl col-auto'><i class='far fa-lightbulb' title='Estatus'></i> Estatus</div>";
+			echo "<div class='col-12 col-xl col-auto'><i class='fas fa-cubes' title='Stock'></i> Stock</div>";
+			echo "<div class='col-12 col-xl col-auto'><i class='far fa-file-alt' title='Descripción'></i> Descripción</div>";
+			echo "<div class='col-12 col-xl col-auto'><i class='fas fa-dollar-sign' title='Precio' ></i> Precio</div>";
+//			echo "<div class='col-12 col-xl col-auto'><i class='fas fa-dollar-sign' title='Precio Mayoreo' >M</i></div>";
+//			echo "<div class='col-12 col-xl col-auto'><i class='fas fa-dollar-sign' title='Precio Distribuidor' >D</i></div>";
 		echo "</div>";
 
 	  if(count($res)>0){
@@ -76,7 +76,7 @@
 				echo  "<div class='col-12 col-xl col-auto text-center'>";
 	        echo 	moneda($key->precio);
 	      echo  "</div>";
-
+/*
 				echo  "<div class='col-12 col-xl col-auto text-center'>";
 					echo 	moneda($key->precio_mayoreo);
 				echo  "</div>";
@@ -84,7 +84,7 @@
 				echo  "<div class='col-12 col-xl col-auto text-center'>";
 					echo 	moneda($key->precio_distri);
 				echo  "</div>";
-
+*/
 	      echo  "</div>";
 	    }
 	  }

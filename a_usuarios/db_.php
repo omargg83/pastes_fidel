@@ -161,15 +161,15 @@ class Usuario extends Sagyc{
 
 		$x.= "<optgroup label='Clientes'>";
 		$x.= "<option value='CLIENTES'>Clientes</option>";
-		$x.= "<option value='CITAS'>Citas</option>";
+	//	$x.= "<option value='CITAS'>Citas</option>";
 
-		$x.= "<optgroup label='Proveedores'>";
-		$x.= "<option value='PROVEEDORES'>Proveedores</option>";
-		$x.= "<option value='COMPRAS'>Compras</option>";
-		$x.= "<option value='TRASPASOS'>Traspasos</option>";
+//		$x.= "<optgroup label='Proveedores'>";
+	//	$x.= "<option value='PROVEEDORES'>Proveedores</option>";
+	//	$x.= "<option value='COMPRAS'>Compras</option>";
+	//	$x.= "<option value='TRASPASOS'>Traspasos</option>";
 
-		$x.= "<optgroup label='Gastos'>";
-		$x.= "<option value='GASTOS'>Gastos</option>";
+//		$x.= "<optgroup label='Gastos'>";
+//		$x.= "<option value='GASTOS'>Gastos</option>";
 
 		$x.= "<optgroup label='Empresa'>";
 		$x.= "<option value='DATOSEMP'>Datos</option>";
@@ -177,8 +177,8 @@ class Usuario extends Sagyc{
 		$x.= "<option value='REPORTES'>Reportes</option>";
 		$x.= "<option value='USUARIOS'>Usuarios</option>";
 
-		$x.= "<optgroup label='Supervisor'>";
-		$x.= "<option value='SUPERVISOR'>Supervisor</option>";
+	//	$x.= "<optgroup label='Supervisor'>";
+	//	$x.= "<option value='SUPERVISOR'>Supervisor</option>";
 		return $x;
 	}
 
@@ -245,16 +245,16 @@ class Usuario extends Sagyc{
 		$x=$this->insert('usuarios_permiso', array('idusuario'=>$id,'captura'=>1,'nivel'=>0,'modulo'=>'VENTAREGISTRO'));
 		$x=$this->insert('usuarios_permiso', array('idusuario'=>$id,'captura'=>1,'nivel'=>0,'modulo'=>'PRODUCTOS'));
 		$x=$this->insert('usuarios_permiso', array('idusuario'=>$id,'captura'=>1,'nivel'=>0,'modulo'=>'INVENTARIO'));
-		$x=$this->insert('usuarios_permiso', array('idusuario'=>$id,'captura'=>1,'nivel'=>0,'modulo'=>'GASTOS'));
+//		$x=$this->insert('usuarios_permiso', array('idusuario'=>$id,'captura'=>1,'nivel'=>0,'modulo'=>'GASTOS'));
 		$x=$this->insert('usuarios_permiso', array('idusuario'=>$id,'captura'=>1,'nivel'=>0,'modulo'=>'CLIENTES'));
-		$x=$this->insert('usuarios_permiso', array('idusuario'=>$id,'captura'=>1,'nivel'=>0,'modulo'=>'CITAS'));
-		$x=$this->insert('usuarios_permiso', array('idusuario'=>$id,'captura'=>1,'nivel'=>0,'modulo'=>'PROVEEDORES'));
-		$x=$this->insert('usuarios_permiso', array('idusuario'=>$id,'captura'=>1,'nivel'=>0,'modulo'=>'COMPRAS'));
-		$x=$this->insert('usuarios_permiso', array('idusuario'=>$id,'captura'=>1,'nivel'=>0,'modulo'=>'TRASPASOS'));
+//		$x=$this->insert('usuarios_permiso', array('idusuario'=>$id,'captura'=>1,'nivel'=>0,'modulo'=>'CITAS'));
+//		$x=$this->insert('usuarios_permiso', array('idusuario'=>$id,'captura'=>1,'nivel'=>0,'modulo'=>'PROVEEDORES'));
+//		$x=$this->insert('usuarios_permiso', array('idusuario'=>$id,'captura'=>1,'nivel'=>0,'modulo'=>'COMPRAS'));
+//		$x=$this->insert('usuarios_permiso', array('idusuario'=>$id,'captura'=>1,'nivel'=>0,'modulo'=>'TRASPASOS'));
 		$x=$this->insert('usuarios_permiso', array('idusuario'=>$id,'captura'=>1,'nivel'=>0,'modulo'=>'DATOSEMP'));
 		$x=$this->insert('usuarios_permiso', array('idusuario'=>$id,'captura'=>1,'nivel'=>0,'modulo'=>'SUCURSAL'));
 		$x=$this->insert('usuarios_permiso', array('idusuario'=>$id,'captura'=>1,'nivel'=>0,'modulo'=>'REPORTES'));
-		$x=$this->insert('usuarios_permiso', array('idusuario'=>$id,'captura'=>1,'nivel'=>0,'modulo'=>'SUPERVISOR'));
+//		$x=$this->insert('usuarios_permiso', array('idusuario'=>$id,'captura'=>1,'nivel'=>0,'modulo'=>'SUPERVISOR'));
 
 		$arreglo =array();
 		$arreglo+=array('id'=>$id);
