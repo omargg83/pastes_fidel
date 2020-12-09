@@ -161,15 +161,15 @@ class Usuario extends Sagyc{
 
 		$x.= "<optgroup label='Clientes'>";
 		$x.= "<option value='CLIENTES'>Clientes</option>";
-		$x.= "<option value='CITAS'>Citas</option>";
+	//	$x.= "<option value='CITAS'>Citas</option>";
 
-		$x.= "<optgroup label='Proveedores'>";
-		$x.= "<option value='PROVEEDORES'>Proveedores</option>";
-		$x.= "<option value='COMPRAS'>Compras</option>";
-		$x.= "<option value='TRASPASOS'>Traspasos</option>";
+	//	$x.= "<optgroup label='Proveedores'>";
+	//	$x.= "<option value='PROVEEDORES'>Proveedores</option>";
+	//	$x.= "<option value='COMPRAS'>Compras</option>";
+	//	$x.= "<option value='TRASPASOS'>Traspasos</option>";
 
-		$x.= "<optgroup label='Gastos'>";
-		$x.= "<option value='GASTOS'>Gastos</option>";
+	//	$x.= "<optgroup label='Gastos'>";
+	//	$x.= "<option value='GASTOS'>Gastos</option>";
 
 		$x.= "<optgroup label='Reportes'>";
 		$x.= "<option value='REPORTE_VENTAS'>Reporte de ventas</option>";
@@ -183,8 +183,9 @@ class Usuario extends Sagyc{
 		$x.= "<option value='REPORTES'>Reportes</option>";
 		$x.= "<option value='USUARIOS'>Usuarios</option>";
 
-		$x.= "<optgroup label='Supervisor'>";
-		$x.= "<option value='SUPERVISOR'>Supervisor</option>";
+		//$x.= "<optgroup label='Supervisor'>";
+
+	//	$x.= "<option value='SUPERVISOR'>Supervisor</option>";
 		return $x;
 	}
 
