@@ -52,7 +52,7 @@
       <div class='card-header'>Venta #<?php echo $numero_compra; ?></div>
       <div class='card-body'>
         <div class='row'>
-          <div class='col-sm-12 col-md-12 col-lg-7 col-xl-7'>
+          <div class='col-sm-12 col-md-12 col-lg-6 col-xl-6'>
             <div class='row mb-3' id='dato_compra'>
               <?php
                 include 'dato_compra.php';
@@ -63,6 +63,8 @@
                 include 'cliente_datos.php';
               ?>
             </div>
+            <div class='row mb-3'>
+              <div class='col-12'>
               <?php
                 if($estado_compra=="Activa"){
                   if($_SESSION['a_sistema']==1){
@@ -93,6 +95,8 @@
                   }
                 }
               ?>
+              </div>
+            </div>
             <hr>
             <div class='row' >
               <div class='col-12' id='lista' style='min-height:300px; overflow:auto;'>
@@ -103,7 +107,7 @@
             </div>
           </div>
           <hr>
-          <div class='col-sm-12 col-md-12 col-lg-5 col-xl-5'>
+          <div class='col-sm-12 col-md-12 col-lg-6 col-xl-6'>
             <div class='row'>
               <div class='col-12'>
 
@@ -114,6 +118,7 @@
                 					<input type="text" class="form-control form-control-sm" name="prod_venta" id='prod_venta' placeholder='buscar producto' aria-label="buscar producto" aria-describedby="basic-addon2">
                 					<div class="input-group-append">
                           	<button class='btn btn-warning btn-sm' type='submit' ><i class='fas fa-search'></i>Buscar</button>
+                          	<button class='btn btn-warning btn-sm' type='button' is='b-link' des='a_venta/lista_categoria' dix='resultadosx'><i class='fas fa-layer-group'></i>Categorias</button>
                 					</div>
                 				</div>
                 			</div>

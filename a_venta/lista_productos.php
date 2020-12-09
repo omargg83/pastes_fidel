@@ -5,9 +5,6 @@
   $productos=$db->productos_lista($idcategoria);
 
   echo "<div class='tabla_css' id='tabla_css'>";
-    echo "<div class='row header-row'>";
-      echo "<div class='col-12'>DESCRIPCION</div>";
-    echo "</div>";
 
     foreach ($productos as $key) {
       echo "<div class='row body-row' is='b-card' draggable='true'>";

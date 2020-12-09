@@ -46,7 +46,6 @@
 							}
 
 						echo "</div>";
-						echo trim($key->codigo)." - ";
 						echo $key->nombre;
 						echo "<br>".$key->observaciones;
 					echo "</div>";
@@ -88,7 +87,7 @@
 								$total=$key->v_precio_distribuidor;
 							echo "</div>";
 						}
-					} 
+					}
 
 
 					else if ( $key->esquema==1) {
