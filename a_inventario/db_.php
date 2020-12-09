@@ -509,7 +509,7 @@ class Productos extends Sagyc{
 		$sheeti = new \PhpOffice\PhpSpreadsheet\Worksheet\Drawing();
 		$sheeti->setName('logo');
 		$sheeti->setDescription('description');
-		$sheeti->setPath('../img/logoimp.jpg');
+		$sheeti->setPath('../img/pies.png');
 		$sheeti->setHeight(90);
 		$sheeti->setCoordinates("G1");
 		$sheeti->setOffsetX(20);
@@ -539,8 +539,8 @@ class Productos extends Sagyc{
 		$sheet->getStyle('A7:N7')->getFont()->getColor()->setARGB('fffffc'); // CAMBIAR COLOR DE LA FUENTE
 		$sheet->getStyle('A1:F1')->getFont()->setSize(18); //Tamaño fuente
 		$sheet->getStyle('A2')->getFont()->setSize(18); //Tamaño fuente
-		$sheet->setCellValue('A2', 'Visitanos en www.sagyc.com.mx');
-		$sheet->getCell('A2')->getHyperlink()->setUrl('https://www.sagyc.com.mx');
+	//	$sheet->setCellValue('A2', 'Visitanos en www.sagyc.com.mx');
+	//	$sheet->getCell('A2')->getHyperlink()->setUrl('https://www.sagyc.com.mx');
 
 			$sheet->getStyle('A1')
 		->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER); //ALINEACION DE FUENTE
