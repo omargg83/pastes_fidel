@@ -373,26 +373,15 @@ label{
 }
 
 @media (max-width: 575.98px) {
-	/*.sidebar span{
-		display: none;
-	}*/
 	.main{
 		margin-left: 0px;
 	}
 	.fijaproceso{
 		padding-left: 50px;
-		width: 100%;
+		width: 98%;
 	}
 }
 @media (min-width: 576px) and (max-width: 1199.98px) {
-  /*
-	.sidebar span{
-		display: none;
-	}
-	.sidenav span{
-		display: inline-block;
-	}
-  */
   .main {
 		margin-left: 56px;
 	}

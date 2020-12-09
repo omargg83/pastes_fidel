@@ -12,6 +12,7 @@
     $venta=$sth->fetch(PDO::FETCH_OBJ);
     $numero_compra=$venta->numero;
     $estado_compra=$venta->estado;
+    $comanda=$venta->comanda;
 
     $fecha1 = date ( "Y-m-d" , strtotime($venta->fecha) );
     $fecha_compra=$fecha1;
@@ -35,6 +36,7 @@
     $idcliente=0;
     $numero_compra=0;
     $total=0;
+    $comanda="";
     $fecha_compra=date ( "Y-m-d" );
     $estado_compra="Activa";
 
@@ -49,31 +51,70 @@
 <input type="hidden" name="idventa" id="idventa" value="<?php echo $idventa; ?>" readonly>
   <div class="container-fluid">
   	<div class='card'>
-      <div class='card-header'>Venta #<?php echo $numero_compra; ?></div>
+      <div class='card-header'>
+        <div class='row'>
+          <div class='col-8 text-center'>
+            Venta :<?php echo $numero_compra; ?>
+            <span id='div_comanda'>
+              <?php echo "--(".$comanda.")"; ?>
+            </span>
+            <span id='estado'>
+              <?php echo " * ".$estado_compra." * "; ?>
+            </span>
+          </div>
+          <div class='col-4 text-right'>
+            <?php
+              if($estado_compra=="Activa"){
+                if($_SESSION['a_sistema']==1){
+                  if($db->nivel_captura==1){
+                    echo "<button type='button' class='btn btn-warning btn-sm' id='finalizar' is='is-finalizar'><i class='fas fa-cash-register'></i>Finalizar</button>";
+                  }
+                }
+              }
+              ?>
+          </div>
+
+        </div>
+      </div>
       <div class='card-body'>
         <div class='row'>
+          <div class='col-sm-12 col-md-12 col-lg-6 col-xl-6'>
+
+            <div class='row' id='buscar_form'>
+              <?php
+                include 'buscar_form.php';
+              ?>
+            </div>
+            <div clas='row' id='resultadosx' style='min-height:200px; max-height: 500px; overflow:auto;'>
+              <?php
+                include 'lista_categoria.php';
+              ?>
+            </div>
+          </div>
+
           <div class='col-sm-12 col-md-12 col-lg-6 col-xl-6'>
             <div class='row mb-3' id='dato_compra'>
               <?php
                 include 'dato_compra.php';
               ?>
             </div>
+
             <div class='row mb-3' id='cliente_datos'>
               <?php
                 include 'cliente_datos.php';
               ?>
             </div>
+
             <div class='row mb-3'>
               <div class='col-12'>
               <?php
                 if($estado_compra=="Activa"){
                   if($_SESSION['a_sistema']==1){
-                    echo "<button class='btn btn-warning btn-sm mr-2' type='button' is='b-link' des='a_venta/cliente_busca' dix='trabajo' omodal='1'><i class='fas fa-user-tag'></i>Cliente</button>";
-
-                    /*echo "<button class='btn btn-warning btn-sm mr-2' type='button' is='b-link' des='a_venta/form_comanda' dix='trabajo' omodal='1'><i class='fas fa-clipboard-list'></i>Comanda</button>";*/
+                    //echo "<button class='btn btn-warning btn-sm mr-2' type='button' is='b-link' des='a_venta/cliente_busca' dix='trabajo' omodal='1'><i class='fas fa-user-tag'></i>Cliente</button>";
+                    //echo "<button class='btn btn-warning btn-sm mr-2' type='button' is='b-link' des='a_venta/form_comanda' dix='trabajo' omodal='1'><i class='fas fa-clipboard-list'></i>+ Comanda</button>";
 
                     if($db->nivel_captura==1){
-                      echo "<button type='button' class='btn btn-warning btn-sm mr-2' id='finalizar' is='is-finalizar'><i class='fas fa-cash-register'></i>Finalizar</button>";
+                      //echo "<button type='button' class='btn btn-warning btn-sm mr-2' id='finalizar' is='is-finalizar'><i class='fas fa-cash-register'></i>Finalizar</button>";
     								}
                   }
                 }
@@ -98,40 +139,12 @@
               ?>
               </div>
             </div>
-            <hr>
             <div class='row' >
               <div class='col-12' id='lista' style='min-height:300px; overflow:auto;'>
                 <?php
                   include 'lista_pedido.php';
                 ?>
               </div>
-            </div>
-          </div>
-          <hr>
-          <div class='col-sm-12 col-md-12 col-lg-6 col-xl-6'>
-            <div class='row'>
-              <div class='col-12'>
-
-                  <div class="col-sm-12">
-                    <form is="p-busca" id="form_busca" >
-                			<div clas='row'>
-                					<div class="input-group mb-3">
-                					<input type="text" class="form-control form-control-sm" name="prod_venta" id='prod_venta' placeholder='buscar producto' aria-label="buscar producto" aria-describedby="basic-addon2">
-                					<div class="input-group-append">
-                          	<button class='btn btn-warning btn-sm' type='submit' ><i class='fas fa-search'></i>Buscar</button>
-                          	<button class='btn btn-warning btn-sm' type='button' is='b-link' des='a_venta/lista_categoria' dix='resultadosx'><i class='fas fa-layer-group'></i>Categorias</button>
-                					</div>
-                				</div>
-                			</div>
-                		</form>
-                  </div>
-              </div>
-            </div>
-            <hr>
-            <div clas='row' id='resultadosx' style='min-height:500px; max-height: 500; overflow:auto;'>
-              <?php
-                include 'lista_categoria.php';
-              ?>
             </div>
           </div>
         </div>

@@ -35,7 +35,7 @@ class Venta extends Sagyc{
 
 	public function ventas_lista($pagina){
 		$pagina=$pagina*$_SESSION['pagina'];
-		$sql="select venta.idventa, venta.numero, venta.idsucursal, clientes.nombre, venta.total, venta.fecha, venta.gtotal, venta.estado from venta
+		$sql="select venta.idventa, venta.numero, venta.comanda, venta.idsucursal, clientes.nombre, venta.total, venta.fecha, venta.gtotal, venta.estado from venta
 		left outer join clientes on clientes.idcliente=venta.idcliente
 		where venta.idsucursal='".$_SESSION['idsucursal']."' and (venta.estado='Activa' or venta.estado='Editar') order by venta.numero desc limit $pagina,".$_SESSION['pagina']."";
 		$sth = $this->dbh->prepare($sql);
@@ -44,7 +44,7 @@ class Venta extends Sagyc{
 	}
 	public function ventas_pagadas($pagina){
 		$pagina=$pagina*$_SESSION['pagina'];
-		$sql="select venta.idventa, venta.numero, venta.idsucursal, clientes.nombre, venta.total, venta.fecha, venta.gtotal, venta.estado from venta
+		$sql="select venta.idventa, venta.numero, venta.comanda, venta.idsucursal, clientes.nombre, venta.total, venta.fecha, venta.gtotal, venta.estado from venta
 		left outer join clientes on clientes.idcliente=venta.idcliente
 		where venta.idsucursal='".$_SESSION['idsucursal']."' and venta.estado='Pagada' order by venta.numero desc limit $pagina,".$_SESSION['pagina']."";
 		$sth = $this->dbh->prepare($sql);
@@ -52,7 +52,7 @@ class Venta extends Sagyc{
 		return $sth->fetchAll(PDO::FETCH_OBJ);
 	}
 	public function ventas_buscar($texto){
-		$sql="select venta.idventa, venta.numero, venta.idsucursal, clientes.nombre, venta.total, venta.fecha, venta.gtotal, venta.estado from venta
+		$sql="select venta.idventa, venta.numero, venta.comanda, venta.idsucursal, clientes.nombre, venta.total, venta.fecha, venta.gtotal, venta.estado from venta
 		left outer join clientes on clientes.idcliente=venta.idcliente
 		where venta.idsucursal='".$_SESSION['idsucursal']."' and (venta.numero like '%$texto%' or clientes.nombre like '%$texto%') order by venta.numero desc limit 100";
 		$sth = $this->dbh->prepare($sql);
@@ -62,7 +62,7 @@ class Venta extends Sagyc{
 
 	public function ventas_canceladas($pagina){
 		$pagina=$pagina*$_SESSION['pagina'];
-		$sql="select venta.idventa, venta.numero, venta.idsucursal, clientes.nombre, venta.total, venta.fecha, venta.gtotal, venta.estado from venta
+		$sql="select venta.idventa, venta.numero, venta.comanda, venta.idsucursal, clientes.nombre, venta.total, venta.fecha, venta.gtotal, venta.estado from venta
 		left outer join clientes on clientes.idcliente=venta.idcliente
 		where venta.idsucursal='".$_SESSION['idsucursal']."' and venta.estado='Cancelada' order by venta.numero desc limit $pagina,".$_SESSION['pagina']."";
 		$sth = $this->dbh->prepare($sql);

@@ -24,8 +24,9 @@
 			</div>
 		</div>
 		<div class='row header-row'>
-			<div class='col-2'>#</div>
+			<div class='col-1'>#</div>
 			<div class='col-2'>Numero</div>
+			<div class='col-1'>Comanda</div>
 			<div class='col-2'>Fecha</div>
 			<div class='col-2'>Cliente</div>
 			<div class='col-2'>Total</div>
@@ -36,7 +37,7 @@
 				foreach($pd as $key){
 			?>
 					<div class='row body-row' draggable='true'>
-						<div class='col-2'>
+						<div class='col-1'>
 							<div class="btn-group">
 								<?php
 									if($db->nivel_captura==1){
@@ -46,6 +47,7 @@
 							</div>
 						</div>
 						<div class='col-2'><?php echo $key->numero; ?></div>
+						<div class='col-1'><?php echo $key->comanda; ?></div>
 						<div class='col-2'><?php echo fecha($key->fecha); ?></div>
 						<div class='col-2'><?php echo $key->nombre; ?></div>
 

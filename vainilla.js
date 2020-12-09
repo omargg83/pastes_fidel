@@ -260,11 +260,9 @@ $(document).on('submit',"[is*='is-selecciona']",function(e){
       document.getElementById("idventa").value=datos.idventa;
       document.getElementById("numero").value=datos.numero;
       document.getElementById("fecha").value=datos.fecha;
-      document.getElementById("estado").value=datos.estado;
-      //document.getElementById("total").value=datos.total;
-
+      document.getElementById("comanda").value=datos.comanda;
+      document.getElementById("div_comanda").innerHTML=datos.comanda;
       lista(datos.idventa);
-      document.getElementById("resultadosx").innerHTML ="";
     }
     else{
       cargando(false);
@@ -487,7 +485,44 @@ $(document).on('submit',"[is*='f-comanda']",function(e){
   e.preventDefault();
 
   let idventa=document.getElementById("idventa").value;
-  alert("entra");
+  let idcliente=document.getElementById("idcliente").value;
+  let comanda=document.getElementById("comanda_txt").value;
+
+  let formData = new FormData();
+  formData.append("idventa", idventa);
+  formData.append("idcliente", idcliente);
+  formData.append("comanda", comanda);
+  formData.append("function", "agregar_comanda");
+
+  console.log(comanda);
+
+  let xhr = new XMLHttpRequest();
+  xhr.open('POST',"a_venta/db_.php");
+  xhr.addEventListener('load',(data)=>{
+    var datos = JSON.parse(data.target.response);
+    if(datos.error==0){
+      document.getElementById("idventa").value=datos.idventa;
+      document.getElementById("numero").value=datos.numero;
+      document.getElementById("fecha").value=datos.fecha;
+      document.getElementById("comanda").value=datos.comanda;
+      document.getElementById("div_comanda").innerHTML=datos.comanda;
+      $('#myModal').modal('hide');
+    }
+    else{
+      Swal.fire({
+        type: 'error',
+        title: "Error: "+datos.terror,
+        showConfirmButton: false,
+        timer: 1000
+      });
+      return;
+    }
+    cargando(false);
+  });
+  xhr.onerror =  ()=>{
+    cargando(false);
+  };
+  xhr.send(formData);
 });
 
 
