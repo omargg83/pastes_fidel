@@ -19,6 +19,7 @@
 	echo "<div class='container-fluid'>";
 ?>
 
+
 <div class='tabla_css' id='tabla_css'>
 	<div class='row titulo-row'>
 		<div class='col-xl col-auto'>
@@ -69,8 +70,6 @@
 			$contar=$sth->fetch(PDO::FETCH_OBJ);
 			$paginas=ceil($contar->total/$_SESSION['pagina']);
 			$pagx=$paginas-1;
-
 			echo $db->paginar($paginas,$pag,$pagx,"a_productos/lista","trabajo");
-
 		}
 	?>
