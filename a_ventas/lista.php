@@ -36,7 +36,7 @@
 				foreach($pd as $key){
 			?>
 					<div class='row body-row' draggable='true'>
-						<div class='col-12 col-sm-12 col-md-6 col-lg-6 col-xl-2'>
+						<div class='col-12 col-sm-12 col-md-6 col-lg-6 col-xl-2' >
 							<div class="btn-group">
 								<?php
 									if($db->nivel_captura==1){
@@ -45,12 +45,11 @@
 								?>
 							</div>
 						</div>
-						<div class='col-12 col-sm-12 col-md-6 col-lg-6 col-xl-2 text-center'><?php echo $key->numero; ?></div>
-						<div class='col-12 col-sm-12 col-md-6 col-lg-6 col-xl-2 text-center'><?php echo $key->comanda; ?></div>
-						<div class='col-12 col-sm-12 col-md-6 col-lg-6 col-xl-2'><?php echo fecha($key->fecha,2); ?></div>
-						<div class='col-12 col-sm-12 col-md-6 col-lg-6 col-xl-2'><?php echo $key->nombre; ?></div>
-
-						<div class='col-12 col-sm-12 col-md-6 col-lg-6 col-xl-2' align="center"><?php echo moneda($key->total); ?></div>
+						<div class='col-12 col-sm-12 col-md-6 col-lg-6 col-xl-2 text-center' data-titulo='Numero'><?php echo $key->numero; ?></div>
+						<div class='col-12 col-sm-12 col-md-6 col-lg-6 col-xl-2 text-center' data-titulo='Comanda'><?php echo $key->comanda; ?></div>
+						<div class='col-12 col-sm-12 col-md-6 col-lg-6 col-xl-2' data-titulo='Fecha'><?php echo fecha($key->fecha,2); ?></div>
+						<div class='col-12 col-sm-12 col-md-6 col-lg-6 col-xl-2' data-titulo='Cliente'><?php echo $key->nombre; ?></div>
+						<div class='col-12 col-sm-12 col-md-6 col-lg-6 col-xl-2' align="center" data-titulo='Total'><?php echo moneda($key->total); ?></div>
 
 
 					</div>

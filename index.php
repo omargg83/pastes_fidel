@@ -98,25 +98,8 @@
 
 					<div class="sidebar-header">
 						<?php
-						echo "<span class='text-center' style='font-size:10px'><b>".$_SESSION['sucursal_nombre']."</b></span><br>";
+						echo "<div class='text-center' style='font-size:14px; width:100%'><b>".$_SESSION['sucursal_nombre']."</b></div>";
 						?>
-		        <div class="user-pic">
-							<?php
-								if(strlen($_SESSION['foto'])>0 and file_exists($db->f_usuarios."/".$_SESSION['foto'])){
-									echo "<img class='img-responsive img-rounded' src='".$db->f_usuarios.$_SESSION['foto']."' alt='User picture'>";
-								}
-								else{
-									echo "<img class='img-responsive img-rounded' src='https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg' alt='User picture'>";
-								}
-							?>
-		        </div>
-		        <div class="user-info" style='width: 80px; white-space: nowrap; text-overflow: ellipsis;overflow: hidden;'>
-		          <span class="user-name" ><?php echo $_SESSION['nombre'] ?></span>
-		          <span class="user-status">
-		            <i class="fa fa-circle"></i>
-		            <span>Online</span>
-		          </span>
-		        </div>
       		</div>
 
 					<div class="sidebar-body">
@@ -165,6 +148,27 @@
 		       echo "<a href='#a_supervisor/index' is='menu-link' title='Supervisor'><i class='far fa-eye'></i><span>Supervisor</span></a>";
 					?>
 					</div>
+
+					<div class="sidebar-header">
+
+		        <div class="user-pic">
+							<?php
+								if(strlen($_SESSION['foto'])>0 and file_exists($db->f_usuarios."/".$_SESSION['foto'])){
+									echo "<img class='img-responsive img-rounded' src='".$db->f_usuarios.$_SESSION['foto']."' alt='User picture'>";
+								}
+								else{
+									echo "<img class='img-responsive img-rounded' src='https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg' alt='User picture'>";
+								}
+							?>
+		        </div>
+		        <div class="user-info" style='width: 80px; white-space: nowrap; text-overflow: ellipsis;overflow: hidden;'>
+		          <span class="user-name" ><?php echo $_SESSION['nombre'] ?></span>
+		          <span class="user-status">
+		            <i class="fa fa-circle"></i>
+		            <span>Online</span>
+		          </span>
+		        </div>
+      		</div>
 	      </div>
 			</div>
 			<?php
