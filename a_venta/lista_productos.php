@@ -8,7 +8,7 @@
 
     foreach ($productos as $key) {
       echo "<div class='row body-row' is='b-card' draggable='true'>";
-        echo "<div class='col-12'>";
+        echo "<div class='col-12 col-sm-12 col-md-6 col-lg-6 col-xl-2'>";
 
           echo "<button type='button' is='b-link' id='sel_producto_$key->idproducto' des='a_venta/producto_selecciona' dix='resultadosx' v_idproducto='$key->idproducto' v_idventa='$idventa' class='btn btn-warning btn-sm' title='Seleccionar producto' omodal='1'><i class='fas fa-plus'></i></button>";
 
