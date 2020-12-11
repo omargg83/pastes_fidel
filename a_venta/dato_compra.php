@@ -1,10 +1,11 @@
 
   <div class="col-sm-6 col-md-6 col-lg-6 col-xl-4">
-    <input type="text" class="form-control form-control-sm" id="numero" name='numero' value='<?php echo $numero_compra; ?>' placeholder="Numero" readonly>
     <small>Numero interno</small>
+    <input type="text" class="form-control form-control-sm" id="numero" name='numero' value='<?php echo $numero_compra; ?>' placeholder="Numero" readonly>
   </div>
 
   <div class="col-sm-6 col-md-6 col-lg-6 col-xl-4">
+    <small>Comanda</small>
     <div class="input-group">
       <div class="input-group-prepend">
         <?php
@@ -18,10 +19,9 @@
       <input type="text" class="form-control form-control-sm" id="comanda" name='comanda' value='<?php echo $comanda; ?>' placeholder="Comanda" readonly>
     </div>
 
-    <small>Comanda</small>
   </div>
 
   <div class="col-sm-6 col-md-6 col-lg-6 col-xl-4">
-    <input type="date" class="form-control form-control-sm" id="fecha" name='fecha' value='<?php echo $fecha_compra; ?>' placeholder="Fecha" readonly>
     <small>Fecha</small>
+    <input type="date" class="form-control form-control-sm" id="fecha" name='fecha' value='<?php echo $fecha_compra; ?>' placeholder="Fecha" readonly>
   </div>
