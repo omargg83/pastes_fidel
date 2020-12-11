@@ -44,14 +44,9 @@
 		<button class="btn btn-warning btn-sm mr-2" type="button" onclick='fijar()'><i class='fas fa-bars'></i></button>
 
 	  <img src='img/sagyc.png' width='60' height='30' alt=''>
-	  <a class='navbar-brand text-black text-center ml-3' href='#'>
-			<?php
-			echo $_SESSION['n_sistema'];
-			echo "<small> - ".$_SESSION['sucursal_nombre']."</small>";
-			if($_SESSION['a_sistema']==0){
-				echo " - SISTEMA INACTIVO";
-			}
-			?>  </a>
+	  <a class='navbar-brand text-black text-center ml-3' href='#'><?php
+				echo trim($_SESSION['n_sistema']);
+			?></a>
 	  <button class='navbar-toggler collapsed' type='button' data-toggle='collapse' data-target='#navbarsExample06' aria-controls='navbarsExample06' aria-expanded='false' aria-label='Toggle navigation'>
 	    <span class='navbar-toggler-icon'></span>
 	  </button>
@@ -102,6 +97,9 @@
 					?>
 
 					<div class="sidebar-header">
+						<?php
+						echo "<span class='text-center' style='font-size:10px'><b>".$_SESSION['sucursal_nombre']."</b></span><br>";
+						?>
 		        <div class="user-pic">
 							<?php
 								if(strlen($_SESSION['foto'])>0 and file_exists($db->f_usuarios."/".$_SESSION['foto'])){
@@ -114,7 +112,6 @@
 		        </div>
 		        <div class="user-info" style='width: 80px; white-space: nowrap; text-overflow: ellipsis;overflow: hidden;'>
 		          <span class="user-name" ><?php echo $_SESSION['nombre'] ?></span>
-		          <span class="user-role"><?php echo $_SESSION['sucursal_nombre']; ?></span>
 		          <span class="user-status">
 		            <i class="fa fa-circle"></i>
 		            <span>Online</span>

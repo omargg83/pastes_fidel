@@ -9,7 +9,7 @@ echo "<div class='container-fluid'>";
 				<div class='dash_icon'>
 					<div class='row'>
 						<div class='col-3'>
-							<img class='card-img-top mx-auto d-block' src='img\\venta.png' alt='Card image' style='width:60px'>
+							<i class='fas fa-cash-register fa-4x'></i>
 						</div>
 						<div class='col-9'>
 							<h5>VENTA</h5>
@@ -27,7 +27,7 @@ echo "<div class='container-fluid'>";
 				<div class='dash_icon'>
 					<div class='row'>
 						<div class='col-3'>
-							<img class='card-img-top mx-auto d-block' src='img\\venta.png' alt='Card image' style='width:60px'>
+							<i class='fas fa-shopping-basket fa-5x'></i>
 						</div>
 						<div class='col-9'>
 							<h5>VENTAS</h5>
@@ -63,7 +63,9 @@ echo "<div class='container-fluid'>";
 				<div class='dash_icon'>
 					<div class='row'>
 						<div class='col-3'>
-							<img class='card-img-top mx-auto d-block' src='img\\pies.png' alt='Card image' style='width:150px'>
+							<center>
+								<i class='fab fa-product-hunt fa-4x'></i>
+							</center>
 						</div>
 						<div class='col-9'>
 							<h5>PRODUCTOS</h5>
