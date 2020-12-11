@@ -46,10 +46,16 @@
   text-align: center;
   padding: 10px;
   font-weight: bold;
+  margin-bottom:10px;
+  border-radius:10px;
+
+  animation: fadeIn; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 1s; /* don't forget to set a duration! */
 }
 .tabla_css > .body-row{
   border-bottom: .5px solid #e3e5e4;
   padding: 5px;
+  background-color:#fff;
 }
 .tabla_css > .body-row:hover{
 
@@ -378,7 +384,7 @@ label{
 	}
 	.fijaproceso{
 		padding-left: 50px;
-		width: 98%;
+		/*width: 98%;*/
 	}
 }
 @media (min-width: 576px) and (max-width: 1199.98px) {

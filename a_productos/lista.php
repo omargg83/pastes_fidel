@@ -16,7 +16,7 @@
 	}
 	$sucursal=$db->sucursal();
 
-	echo "<div class='container-fluid' style='background-color:".$_SESSION['cfondo']."; '>";
+	echo "<div class='container-fluid'>";
 ?>
 
 <div class='tabla_css' id='tabla_css'>

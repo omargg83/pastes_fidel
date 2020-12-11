@@ -9,7 +9,7 @@
 		$pd = $db->gastos_lista();
 	}
 
-	echo "<div class='container-fluid' style='background-color:".$_SESSION['cfondo']."; '>";
+	echo "<div class='container-fluid'>";
 ?>
 <div class='tabla_css' id='tabla_css'>
 	<div class='row titulo-row'>

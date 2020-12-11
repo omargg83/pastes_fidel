@@ -1,7 +1,7 @@
 <?php
 	require_once("db_.php");
 	$pd = $db->tienda_lista();
-	echo "<div class='container' style='background-color:".$_SESSION['cfondo']."; '>";
+	echo "<div class='container' >";
 ?>
 <div class='tabla_css' id='tabla_css'>
 	<div class='row titulo-row'>

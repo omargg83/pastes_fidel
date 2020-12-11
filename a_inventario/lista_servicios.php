@@ -7,8 +7,8 @@
 		$pag=$_REQUEST['pag'];
 	}
 	$pd = $db->servicios_lista($pag);
-	echo "<div class='container-fluid' style='background-color:".$_SESSION['cfondo']."; '>";
 ?>
+<div class='container-fluid'>
 
 	<div class='tabla_css' id='tabla_css'>
 		<div class='row titulo-row'>
