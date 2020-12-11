@@ -54,11 +54,11 @@
       <div class='card-header'>
         <div class='row'>
           <div class='col-sm-12 col-md-12 col-lg-12 col-xl-8'>
-            Venta :<?php echo $numero_compra; ?>
+            Venta :   <span id='div_numero'><?php echo $numero_compra; ?></span>
             <span id='div_comanda'>
               <?php echo "--(".$comanda.")"; ?>
             </span>
-            <span id='estado'>
+            <span id='div_estado'>
               <?php echo " * ".$estado_compra." * "; ?>
             </span>
           </div>

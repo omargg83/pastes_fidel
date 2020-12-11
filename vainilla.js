@@ -262,6 +262,7 @@ $(document).on('submit',"[is*='is-selecciona']",function(e){
       document.getElementById("fecha").value=datos.fecha;
       document.getElementById("comanda").value=datos.comanda;
       document.getElementById("div_comanda").innerHTML=datos.comanda;
+      document.getElementById("div_numero").innerHTML=datos.numero;
       lista(datos.idventa);
     }
     else{
@@ -360,7 +361,25 @@ $(document).on('click',"[is*='is-cliente']",function(e){
   let xhr = new XMLHttpRequest();
   xhr.open('POST',"a_venta/db_.php");
   xhr.addEventListener('load',(data)=>{
-    cliente_datos(idcliente, idventa);
+    var datos = JSON.parse(data.target.response);
+    if(datos.error==0){
+      document.getElementById("idventa").value=datos.idventa;
+      document.getElementById("numero").value=datos.numero;
+      document.getElementById("fecha").value=datos.fecha;
+      document.getElementById("comanda").value=datos.comanda;
+      document.getElementById("div_comanda").innerHTML=datos.comanda;
+      document.getElementById("div_numero").innerHTML=datos.numero;
+      cliente_datos(idcliente, datos.idventa);
+    }
+    else{
+      Swal.fire({
+        type: 'error',
+        title: "Error: "+datos.terror,
+        showConfirmButton: false,
+        timer: 1000
+      });
+      return;
+    }
     $('#myModal').modal('hide');
     cargando(false);
   });
@@ -494,8 +513,6 @@ $(document).on('submit',"[is*='f-comanda']",function(e){
   formData.append("comanda", comanda);
   formData.append("function", "agregar_comanda");
 
-  console.log(comanda);
-
   let xhr = new XMLHttpRequest();
   xhr.open('POST',"a_venta/db_.php");
   xhr.addEventListener('load',(data)=>{
@@ -506,6 +523,7 @@ $(document).on('submit',"[is*='f-comanda']",function(e){
       document.getElementById("fecha").value=datos.fecha;
       document.getElementById("comanda").value=datos.comanda;
       document.getElementById("div_comanda").innerHTML=datos.comanda;
+      document.getElementById("div_numero").innerHTML=datos.numero;
       $('#myModal').modal('hide');
     }
     else{
