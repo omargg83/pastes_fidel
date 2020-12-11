@@ -18,7 +18,7 @@
 
 	<div class='tabla_css' id='tabla_css'>
 		<div class='row titulo-row'>
-			<div class='col-12 col-sm-12 col-md-6 col-lg-6 col-xl-2'>
+			<div class='col-12'>
 				INVENTARIO DE PRODUCTOS
 			</div>
 		</div>
@@ -72,13 +72,13 @@
 							echo "</div>";
 						echo "</div>";
 
-						echo "<div class=' col-12 col-sm-12 col-md-6 col-lg-6 col-xl-2 '>";
+						echo "<div class='col-12 col-sm-12 col-md-6 col-lg-6 col-xl-2 ' data-titulo='Código'>";
 							echo $key->codigo;
 						echo "</div>";
 
-						echo "<div class=' col-12 col-sm-12 col-md-6 col-lg-6 col-xl-2 '>".$key->nombre."</div>";
+						echo "<div class='col-12 col-sm-12 col-md-6 col-lg-6 col-xl-2 ' data-titulo='Nombre'>".$key->nombre."</div>";
 
-						echo "<div class=' col-12 col-sm-12 col-md-6 col-lg-6 col-xl-2 '>";
+						echo "<div class='col-12 col-sm-12 col-md-6 col-lg-6 col-xl-2 ' data-titulo='Existencia'>";
 
 							if($_SESSION['nivel']==66){
 								echo "Sum:".$exist;
@@ -107,7 +107,7 @@
 							}
 						echo "</div>";
 
-						echo "<div class=' col-12 col-sm-12 col-md-6 col-lg-6 col-xl-2 text-right' >".moneda($key->precio)."</div>";
+						echo "<div class='col-12 col-sm-12 col-md-6 col-lg-6 col-xl-2 text-right' data-titulo='Precio de venta'>".moneda($key->precio)."</div>";
 					echo '</div>';
 				}
 			?>
