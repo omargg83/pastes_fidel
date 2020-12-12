@@ -13,7 +13,7 @@
   echo "<div class='card-body'>";
 		if($idproducto>0){
 			echo "<div class='row'>";
-				echo "<div class='col-12 col-12 col-sm-12 col-md-6 col-lg-6 col-xl-2'>";
+				echo "<div class='col-12'>";
 						echo "<div class='btn-group'>";
 						if($tipo==3){
 							echo "<button class='btn btn-warning btn-sm' type='button' is='b-link' des='a_inventario/form_agrega' omodal='1' v_id='0' v_idproducto='$idproducto' ><i class='fas fa-plus'></i>existencias</button>";
@@ -116,11 +116,9 @@
 							echo "<br>".$traspaso->nombre;
 						}
           echo "</div>";
-
           echo "<div class='col-12 col-12 col-sm-12 col-md-6 col-lg-6 col-xl-2 text-center'>";
             echo $key->cantidad;
           echo "</div>";
-
           echo "<div class='col-12 col-12 col-sm-12 col-md-6 col-lg-6 col-xl-2 text-center'>";
             echo $key->existencia;
           echo "</div>";

@@ -229,6 +229,8 @@ label{
 }
 
 
+
+
 /*Comienza la SIDEBAR*/
 /*//////////////////////////////////////////////////////////////////////////*/
 .sidebar{
@@ -250,6 +252,7 @@ label{
   overflow: hidden;
   padding-top: 10px;
 }
+
 .sidebar a, .dropdown-btn {
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
@@ -274,10 +277,9 @@ label{
 }
 /* On mouse-over */
 .sidebar a:hover, .dropdown-btn:hover {
-	border-left: 6px solid #909090;
-	/*background-color: var(--sidebar-bg-hover);*/
+	border-left: 6px solid #b9bbba;
   background-color: #fff4dc;
-
+  transition: width 2s, height 4s;
 }
 .sidebar i{
   margin-left: 16px;
@@ -291,65 +293,7 @@ label{
   width: 200px;
 }
 
-/*sidenav fija*/
-
 .sidebar_fija{
-	font-family: 'Roboto', sans-serif;
-	font-size: 15px;
-	position: fixed;
-	z-index: 10;
-  width: 200px;
-	top: 61px;
-	background-color: var(--main-bg-color);
-	color: var(--sidebar-color-font);
-	overflow-x: hidden;
-	left: 0;
-	height: 100%;
-	transition: 0.2s all;
-	-webkit-box-shadow: 2px 0px 5px 0px rgba(0,0,0,0.75);
-	-moz-box-shadow: 2px 0px 5px 0px rgba(0,0,0,0.75);
-	box-shadow: 2px 0px 5px 0px rgba(0,0,0,0.75);
-  overflow: hidden;
-  padding-top: 10px;
-}
-.sidebar_fija a, .dropdown-btn {
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-  position: relative;
-  width: 200px;
-  display: table;
-  color: var(--sidebar-color-font);
-  border-collapse: collapse;
-  border-spacing: 0;
-	padding: 6px 8px 6px 16px;
-	text-decoration: none;
-	border: none;
-	background: none;
-	text-align: left;
-	cursor: pointer;
-	outline: none;
-	border-left: 6px solid var(--main-bg-color);
-}
-.sidebar_fija a:hover{
-	text-decoration: none;
-}
-/* On mouse-over */
-.sidebar_fija a:hover, .dropdown-btn:hover {
-	border-left: 6px solid #909090;
-	/*background-color: var(--sidebar-bg-hover);*/
-  background-color: #fff4dc;
-  transform: translateX(10px);
-
-}
-.sidebar_fija i{
-  margin-left: 16px;
-  margin-right: 10px;
-  margin-bottom: 8px;
-  /*color:var(--icon-fontawesome);*/
-  color: #212529;
-	width: 25px;
-}
-.sidebar_fija:hover{
   width: 200px;
 }
 
@@ -374,7 +318,6 @@ label{
     -o-background-size: cover;
     background-size: cover;
 }
-
 .main_fija {
 	margin-left: 1px; /* Same as the width of the sidenav */
 	padding: 10px;
@@ -398,10 +341,10 @@ label{
 
 /* Add an active class to the active dropdown button */
 .activeside {
-	background-color: var(--sidebar-bg-active) !important;
+	background-color: #ece2c6 !important;
 }
 .activeside i{
-	color: white !important;
+	color: black !important;
 }
 
 /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */

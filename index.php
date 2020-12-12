@@ -81,12 +81,14 @@
 	    <div class='container-fluid'>
 
 					<?php
-						if($_SESSION['sidebar']==1){
-							echo "<div class='sidebar_fija' id='navx'>";
-						}
-						else{
-							echo "<div class='sidebar' id='navx'>";
-						}
+
+
+							echo "<div class='sidebar";
+							if($_SESSION['sidebar']==1){
+								echo " sidebar_fija";
+							}
+							echo "' id='navx'>";
+
 					?>
 					<div class="sidebar-header">
 						<?php
