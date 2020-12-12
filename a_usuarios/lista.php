@@ -15,7 +15,7 @@
 		$pd = $db->usuario_lista($pag);
 	}
 ?>
-<div class='container-fluid'>
+<div class='container'>
 <div class='tabla_css' id='tabla_css'>
 	<div class='row titulo-row'>
 		<div class='col-12'>
