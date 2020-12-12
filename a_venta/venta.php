@@ -97,7 +97,6 @@
       <div class='card-body'>
         <div class='row'>
           <div class='col-sm-12 col-md-12 col-lg-6 col-xl-6'>
-
             <div class='row' id='buscar_form'>
               <?php
                 include 'buscar_form.php';

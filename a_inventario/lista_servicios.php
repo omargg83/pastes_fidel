@@ -8,7 +8,7 @@
 	}
 	$pd = $db->servicios_lista($pag);
 ?>
-<div class='container-fluid'>
+<div class='container'>
 
 	<div class='tabla_css' id='tabla_css'>
 		<div class='row titulo-row'>
@@ -75,7 +75,8 @@
 				}
 			?>
 		</div>
-	</div>
+</div>
+
 
 	<?php
 		if(strlen($texto)==0){
@@ -85,16 +86,8 @@
 			$contar=$sth->fetch(PDO::FETCH_OBJ);
 			$paginas=ceil($contar->total/$_SESSION['pagina']);
 			$pagx=$paginas-1;
-			echo "<br>";
-			echo "<nav aria-label='Page navigation text-center'>";
-			  echo "<ul class='pagination'>";
-			    echo "<li class='page-item'><a class='page-link' is='b-link' title='Editar' des='a_inventario/lista_servicios' dix='trabajo'>Primera</a></li>";
-					for($i=0;$i<$paginas;$i++){
-						$b=$i+1;
-						echo "<li class='page-item"; if($pag==$i){ echo " active";} echo "'><a class='page-link' is='b-link' title='Editar' des='a_inventario/lista_servicios' dix='trabajo' v_pag='$i'>$b</a></li>";
-					}
-			    echo "<li class='page-item'><a class='page-link' is='b-link' title='Editar' des='a_inventario/lista_servicios' dix='trabajo' v_pag='$pagx'>Ultima</a></li>";
-			  echo "</ul>";
-			echo "</nav>";
+
+			echo $db->paginar($paginas,$pag,$pagx,"a_inventario/lista_servicios","trabajo");
+
 		}
 	?>

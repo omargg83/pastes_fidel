@@ -214,7 +214,7 @@ label{
 	position: fixed;
 	z-index: 10;
   width: 57px;
-	top: 56px;
+	top: 61px;
 	background-color: var(--main-bg-color);
 	color: var(--sidebar-color-font);
 	overflow-x: hidden;
@@ -276,7 +276,7 @@ label{
 	position: fixed;
 	z-index: 10;
   width: 200px;
-	top: 56px;
+	top: 61px;
 	background-color: var(--main-bg-color);
 	color: var(--sidebar-color-font);
 	overflow-x: hidden;

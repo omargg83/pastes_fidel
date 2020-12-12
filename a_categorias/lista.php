@@ -8,12 +8,10 @@
 	else{
 		$pd = $db->categoria_lista();
 	}
-	echo "<div class='container-fluid'>";
 
-
-	echo "<hr>";
 ?>
 
+<div class='container'>
 <div class='tabla_css' id='tabla_css'>
 	<div class='row titulo-row'>
 		<div class='col-2 text-left'>

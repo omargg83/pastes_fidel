@@ -16,9 +16,9 @@
 	}
 	$sucursal=$db->sucursal();
 
-	echo "<div class='container-fluid'>";
 ?>
 
+<div class='container'>
 
 <div class='tabla_css' id='tabla_css'>
 	<div class='row titulo-row'>

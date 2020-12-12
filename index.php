@@ -31,15 +31,8 @@
 ?>
 
 <header class="d-block p-2" id='header'>
-	<?php
-		if(SERVER=="LOCALHOST"){
-			echo "<nav class='barraprincipal navbar navbar-expand-md fixed-top navbar-dark bg-dark' >";
-		}
-		else{
-			echo "<nav class='barraprincipal navbar navbar-expand-md fixed-top navbar-light bg-light' >";
+	<nav class='barraprincipal navbar navbar-expand-md fixed-top navbar-light bg-light' >
 
-		}
-	?>
 
 		<button class="btn btn-warning btn-sm mr-2" type="button" onclick='fijar()'><i class='fas fa-bars'></i></button>
 

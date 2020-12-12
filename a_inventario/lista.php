@@ -13,8 +13,8 @@
 		}
 		$pd = $db->productos_lista($pag);
 	}
-	echo "<div class='container-fluid'>";
 ?>
+<div class='container'>
 
 	<div class='tabla_css' id='tabla_css'>
 		<div class='row titulo-row'>
