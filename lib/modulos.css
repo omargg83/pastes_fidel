@@ -238,7 +238,6 @@ label{
 	font-size: 15px;
 	position: fixed;
 	z-index: 10;
-  width: 57px;
 	top: 61px;
 	background-color: var(--main-bg-color);
 	color: var(--sidebar-color-font);
@@ -251,6 +250,8 @@ label{
 	box-shadow: 2px 0px 5px 0px rgba(0,0,0,0.75);
   overflow: hidden;
   padding-top: 10px;
+  width: 57px;
+  transition: width 1s;
 }
 
 .sidebar a, .dropdown-btn {
@@ -294,7 +295,9 @@ label{
 }
 
 .sidebar_fija{
+
   width: 200px;
+  transition: width 1s;
 }
 
 /* Main content */
