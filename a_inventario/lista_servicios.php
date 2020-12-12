@@ -12,7 +12,7 @@
 
 	<div class='tabla_css' id='tabla_css'>
 		<div class='row titulo-row'>
-			<div class='col-12 col-12 col-sm-12 col-md-6 col-lg-6 col-xl-2'>
+			<div class='col-12'>
 				INVENTARIO DE SERVICIOS
 			</div>
 		</div>

@@ -22,7 +22,7 @@
 
 <div class='tabla_css' id='tabla_css'>
 	<div class='row titulo-row'>
-		<div class='col-xl col-auto'>
+		<div class='col-12'>
 			LISTA DE PRODUCTOS
 		</div>
 	</div>
