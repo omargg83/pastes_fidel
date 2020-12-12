@@ -54,6 +54,7 @@
       <div class='card-header'>
         <div class='row'>
           <div class='col-sm-12 col-md-12 col-lg-12 col-xl-8'>
+            
             Venta :   <span id='div_numero'><?php echo $numero_compra; ?></span>
             <span id='div_comanda'>
               <?php echo "--(".$comanda.")"; ?>
@@ -61,7 +62,10 @@
             <span id='div_estado'>
               <?php echo " * ".$estado_compra." * "; ?>
             </span>
+
+
           </div>
+
           <div class='col-sm-12 col-md-12 col-lg-12 col-xl-4'>
             <?php
               if($estado_compra=="Activa"){
