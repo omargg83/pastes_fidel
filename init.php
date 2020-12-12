@@ -1,5 +1,5 @@
 <?php
-$server=2;
+$server=3;
 $_SESSION['pagina']=100;
 
   if($server==2){
@@ -10,7 +10,7 @@ $_SESSION['pagina']=100;
     define("BDD", "sagycrmr_pastes_fidel");
     define("PORT", "3306");
     define("SERVER", "LOCALHOST");
-    $_SESSION['des']=1;
+    $_SESSION['des']=0;
   }
   else if($server==3){
     //////////localhost

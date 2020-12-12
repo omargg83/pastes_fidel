@@ -303,7 +303,7 @@ class Productos extends Sagyc{
 		tienda.razon,
 		categorias.nombre as nombrecat
 		from productos_catalogo
-		LEFT OUTER JOIN categorias ON categorias.idcat =productos_catalogo.categoria
+		LEFT OUTER JOIN categorias ON categorias.idcategoria =productos_catalogo.idcategoria
 		LEFT OUTER JOIN tienda ON tienda.idtienda =productos_catalogo.idtienda
 		where productos_catalogo.idtienda='".$_SESSION['idtienda']."' and productos_catalogo.activo_catalogo=1 order by productos_catalogo.nombre asc, productos_catalogo.idcatalogo asc";
 
