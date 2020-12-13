@@ -40,6 +40,22 @@ class Productos extends Sagyc{
 		}
 		$this->doc="a_archivos/productos/";
 	}
+
+	public function sucursal_info(){
+		$idsucursal=$_REQUEST['idsucursal'];
+		$sql="select * from sucursal where idsucursal='".$_SESSION['idsucursal']."'";
+		$sth = $this->dbh->prepare($sql);
+		$sth->execute();
+		return $sth->fetch(PDO::FETCH_OBJ);
+	}
+
+	public function tienda_info(){
+		$sql="select * from tienda where idtienda='".$_SESSION['idtienda']."'";
+		$sth = $this->dbh->prepare($sql);
+		$sth->execute();
+		return $sth->fetch(PDO::FETCH_OBJ);
+	}
+
 	public function usuario($id){
 		$sql="select * from usuarios where idusuario='$id'";
 		$sth = $this->dbh->prepare($sql);
