@@ -48,25 +48,35 @@
 	$pdf->ezText("Al: ".$xal,10,array('justification' => 'center'));
 	$pdf->ezText(" ",10);
 	$totalven=0;
-	foreach($res as $key){
-		$data[$contar]=array(
-			'Ticket #'=>$key->numero,
-			'Fecha'=>$key->fecha,
-			'Cliente'=>$key->nombrecli,
-			'Total'=>moneda($key->total),
-			'Estado'=>$key->estado
 
-		);
-			$totalven+=$key->total;
-		$contar++;
+
+	if (empty($res)) {
+			$pdf->ezText("<b>No hay información disponible en el periodo seleccionado </b>",12,array('justification' => 'center'));
+			$pdf->ezText(" ",10);
 	}
-	$pdf->ezTable($data,"","",array('shadeHeadingCol' => array(127, 255, 0.7),'xPos'=>'center','xOrientation'=>'center','cols'=>array(
-	'Ticket'=>array('width'=>70),
-	'Fecha'=>array('width'=>120),
-	'Cliente'=>array('width'=>110),
-	'Total'=>array('width'=>90),
-	'Estado'=>array('width'=>90)
-),'fontSize' => 10));
+	else {
+		foreach($res as $key){
+			$data[$contar]=array(
+				'Ticket #'=>$key->numero,
+				'Fecha'=>$key->fecha,
+				'Cliente'=>$key->nombrecli,
+				'Total'=>moneda($key->total),
+				'Estado'=>$key->estado
+
+			);
+				$totalven+=$key->total;
+			$contar++;
+		}
+		$pdf->ezTable($data,"","",array('shadeHeadingCol' => array(127, 255, 0.7),'xPos'=>'center','xOrientation'=>'center','cols'=>array(
+		'Ticket'=>array('width'=>70),
+		'Fecha'=>array('width'=>120),
+		'Cliente'=>array('width'=>110),
+		'Total'=>array('width'=>90),
+		'Estado'=>array('width'=>90)
+	),'fontSize' => 10));
+	}
+
+
 
 
 $pdf->ezText(" ",5);
