@@ -27,9 +27,6 @@
 	if(strlen($idsucursal)>0){
 		$sth->bindValue(":idsucursal",$idsucursal);
 	}
-	if(strlen($idusuario)>0){
-		$sth->bindValue(":idusuario",$idusuario);
-	}
 	$sth->execute();
 	$res=$sth->fetchAll(PDO::FETCH_OBJ);
 
