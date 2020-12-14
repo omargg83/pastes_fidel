@@ -58,36 +58,40 @@
 
 	$pdf->ezText(" ",10);
 
-	foreach($res as $key){
-
-		$sql="select sum(cantidad) as total from bodega where idsucursal='$key->idsucursal' and idproducto='$key->idproducto'";
-		$sth = $db->dbh->prepare($sql);
-		$sth->execute();
-		$cantidad=$sth->fetch(PDO::FETCH_OBJ);
-		if(strlen($cantidad->total)>0){
-			$exist=$cantidad->total;
-		}
-		else{
-			$exist=0;
-		}
-
-		$data[$contar]=array(
-			'Código'=>$key->codigo,
-			'Nombre'=>$key->nombre,
-			'Existencia'=>$exist,
-			'Precio de venta'=>moneda($key->precio)
-
-		);
-
-		$contar++;
+	if (empty($res)) {
+			$pdf->ezText("<b>No hay información disponible en el periodo seleccionado </b>",12,array('justification' => 'center'));
+			$pdf->ezText(" ",10);
 	}
-	$pdf->ezTable($data,"","",array('shadeHeadingCol' => array(127, 255, 0.7),'xPos'=>'center','xOrientation'=>'center','cols'=>array(
-	'Código'=>array('width'=>100),
-	'Nombre'=>array('width'=>180),
-	'Existencia'=>array('width'=>80),
-	'Precio de venta'=>array('width'=>90)
-),'fontSize' => 8));
+	else {
+		foreach($res as $key){
 
+			$sql="select sum(cantidad) as total from bodega where idsucursal='$key->idsucursal' and idproducto='$key->idproducto'";
+			$sth = $db->dbh->prepare($sql);
+			$sth->execute();
+			$cantidad=$sth->fetch(PDO::FETCH_OBJ);
+			if(strlen($cantidad->total)>0){
+				$exist=$cantidad->total;
+			}
+			else{
+				$exist=0;
+			}
+
+			$data[$contar]=array(
+				'Código'=>$key->codigo,
+				'Nombre'=>$key->nombre,
+				'Existencia'=>$exist,
+				'Precio de venta'=>moneda($key->precio)
+
+			);
+			$contar++;
+		}
+			$pdf->ezTable($data,"","",array('shadeHeadingCol' => array(127, 255, 0.7),'xPos'=>'center','xOrientation'=>'center','cols'=>array(
+			'Código'=>array('width'=>100),
+			'Nombre'=>array('width'=>180),
+			'Existencia'=>array('width'=>80),
+			'Precio de venta'=>array('width'=>90)
+		),'fontSize' => 8));
+}
 
 $pdf->ezText(" ",5);
 	$pdf->ezText("    Fecha y Hora del reporte: ".$fechayhora->format('d-m-Y H:i:s'),7,array('justification' => 'left'));

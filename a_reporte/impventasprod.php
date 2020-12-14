@@ -60,32 +60,38 @@
 	$pdf->ezText("Al: ".$xal,10,array('justification' => 'center'));
 	$pdf->ezText(" ",10);
 	$totalven=0;
-	foreach($res as $key){
-		$data[$contar]=array(
-			'Ticket #'=>$key->numero,
-			'Fecha'=>$key->fecha,
-			'Producto'=>$key->nombre,
-			'Cant.'=>$key->v_cantidad,
-			'Precio U.'=>moneda($key->v_precio),
-			'Total'=>moneda($key->v_cantidad*$key->v_precio),
-			'Estado.'=>$key->estado,
-			'Vendedor'=>$key->vendedor
 
-		);
-			$totalven+=($key->v_cantidad*$key->v_precio);
-		$contar++;
+	if (empty($res)) {
+			$pdf->ezText("<b>No hay información disponible en el periodo seleccionado </b>",12,array('justification' => 'center'));
+			$pdf->ezText(" ",10);
 	}
-	$pdf->ezTable($data,"","",array('shadeHeadingCol' => array(127, 255, 0.7),'xPos'=>'center','xOrientation'=>'center','cols'=>array(
-	'Ticket'=>array('width'=>50),
-	'Fecha'=>array('width'=>100),
-	'Producto'=>array('width'=>110),
-	'Cant.'=>array('width'=>30),
-	'Precio U.'=>array('width'=>50),
-	'Total'=>array('width'=>50),
-	'Estado'=>array('width'=>130),
-	'Vendedor'=>array('width'=>110)
-),'fontSize' => 8));
+	else {
+		foreach($res as $key){
+			$data[$contar]=array(
+				'Ticket #'=>$key->numero,
+				'Fecha'=>$key->fecha,
+				'Producto'=>$key->nombre,
+				'Cant.'=>$key->v_cantidad,
+				'Precio U.'=>moneda($key->v_precio),
+				'Total'=>moneda($key->v_cantidad*$key->v_precio),
+				'Estado.'=>$key->estado,
+				'Vendedor'=>$key->vendedor
 
+			);
+				$totalven+=($key->v_cantidad*$key->v_precio);
+			$contar++;
+		}
+		$pdf->ezTable($data,"","",array('shadeHeadingCol' => array(127, 255, 0.7),'xPos'=>'center','xOrientation'=>'center','cols'=>array(
+		'Ticket'=>array('width'=>50),
+		'Fecha'=>array('width'=>100),
+		'Producto'=>array('width'=>110),
+		'Cant.'=>array('width'=>30),
+		'Precio U.'=>array('width'=>50),
+		'Total'=>array('width'=>50),
+		'Estado'=>array('width'=>130),
+		'Vendedor'=>array('width'=>110)
+	),'fontSize' => 8));
+	}
 
 $pdf->ezText(" ",5);
 	$pdf->ezText("    Fecha y Hora del reporte: ".$fechayhora->format('d-m-Y H:i:s'),7,array('justification' => 'left'));
