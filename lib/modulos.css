@@ -39,19 +39,18 @@ body {
   margin-left: 1px; /* Same as the width of the sidenav */
 	padding: 10px;
 	padding-top:0px;
-	overflow:auto;
+	overflow: auto;
 	position: fixed;
 	z-index: 1;
 	top: 70px;
 	bottom: 0px;
 	left: 12px;
 	right: 0px;
-
-	transition: left 1s;
+	transition: left .5s;
 }
 .main_fija {
 	left: 160px;
-  transition: left 1s;
+  transition: left .5s;
 }
 
 .navbar-sagyc {
