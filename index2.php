@@ -58,11 +58,54 @@
 
     <ul class="sidenav__list">
       
-      <li class="sidenav__list-item"><a href='#a_ventas/index' is='menu-link'><i class='fas fa-home'></i><span>Ventas</span></a></li>
-      <li class="sidenav__list-item">Item Two</li>
-      <li class="sidenav__list-item">Item Three</li>
-      <li class="sidenav__list-item">Item Four</li>
-      <li class="sidenav__list-item">Item Five</li>
+      <li class="sidenav__list-item"><a href='#dash/index' is='menu-link'><i class='fas fa-home'></i><span>Inicio</span></a></li>
+
+      <?php
+							if((array_key_exists('VENTA', $db->derecho) and $_SESSION['a_sistema']==1) or $_SESSION['nivel']==66)
+							echo "<li class='sidenav__list-item'><a href='#a_venta/venta' id='ventax' is='menu-link' title='Pedidos'><i class='fas fa-cash-register'></i><span>+ Venta</span></a></li>";
+
+							if(array_key_exists('VENTAREGISTRO', $db->derecho) or $_SESSION['nivel']==66)
+							echo "<li class='sidenav__list-item'><a href='#a_ventas/index' id='ventas' is='menu-link' title='Pedidos'><i class='fas fa-shopping-basket'></i><span>Ventas</span></a></li>";
+
+							if(array_key_exists('COMPRAS', $db->derecho) or $_SESSION['nivel']==66)
+							echo "<li class='sidenav__list-item'><a href='#a_compras/index' is='menu-link' title='Compras'><i class='fas fa-shopping-bag'></i><span>Compras</span></a></li>";
+
+							if((array_key_exists('PRODUCTOS', $db->derecho) and $_SESSION['matriz']==1) or $_SESSION['nivel']==66)
+							echo "<li class='sidenav__list-item'><a href='#a_productos/index' is='menu-link' title='Productos'><i class='fab fa-product-hunt'></i><span>Catalogo</span></a></li>";
+
+							if(array_key_exists('INVENTARIO', $db->derecho) or $_SESSION['nivel']==66)
+							echo "<li class='sidenav__list-item'><a href='#a_inventario/index' is='menu-link' title='inventario'><i class='fas fa-boxes'></i><span>Inventario</span></a></li>";
+
+							if(array_key_exists('CLIENTES', $db->derecho) or $_SESSION['nivel']==66)
+							echo "<li class='sidenav__list-item'><a href='#a_cliente/index' is='menu-link' title='Clientes'><i class='fas fa-user-tag'></i><span>Clientes</span></a></li>";
+
+							if(array_key_exists('CITAS', $db->derecho) or $_SESSION['nivel']==66)
+							echo "<li class='sidenav__list-item'><a href='#a_citas/index' is='menu-link' title='Citas'><i class='far fa-calendar-check'></i><span>Citas/Agenda</span></a></li>";
+
+							if(array_key_exists('PROVEEDORES', $db->derecho) or $_SESSION['nivel']==66)
+							echo "<li class='sidenav__list-item'><a href='#a_proveedores/index' is='menu-link' title='Proveedores'><i class='fas fa-people-carry'></i><span>Proveedores</span></a></li>";
+
+							if(array_key_exists('TRASPASOS', $db->derecho) or $_SESSION['nivel']==66)
+							echo "<li class='sidenav__list-item'><a href='#a_traspasos/index' is='menu-link' title='Traspasos'><i class='fas fa-arrows-alt-h'></i><span>Traspasos</span></a></li>";
+
+							if(array_key_exists('GASTOS', $db->derecho) or $_SESSION['nivel']==66)
+			       			echo "<li class='sidenav__list-item'><a href='#a_gastos/index' is='menu-link' title='Datosemp'><i class='fas fa-donate'></i><span>Gastos</span></a></li>";
+
+							if(array_key_exists('REPORTES', $db->derecho) and $_SESSION['a_sistema']==1)
+							echo "<li class='sidenav__list-item'><a href='#a_reporte/index' is='menu-link' title='Reportes'><i class='far fa-chart-bar'></i> <span>Reportes</span></a></li>";
+
+							if(array_key_exists('USUARIOS', $db->derecho) or $_SESSION['nivel']==66)
+							echo "<li class='sidenav__list-item'><a href='#a_usuarios/index' is='menu-link' title='Usuarios'><i class='fas fa-users'></i> <span>Usuarios</span></a></li>";
+
+							if(array_key_exists('DATOSEMP', $db->derecho) or $_SESSION['nivel']==66)
+			        		echo "<li class='sidenav__list-item'><a href='#a_datosemp/index' is='menu-link' title='Datos de la empresa'><i class='fas fa-wrench'></i><span>Datos Emp.</span></a></li>";
+
+							if(array_key_exists('SUPERVISOR', $db->derecho) or $_SESSION['nivel']==66)
+			       			echo "<li class='sidenav__list-item'><a href='#a_supervisor/index' is='menu-link' title='Supervisor'><i class='far fa-eye'></i><span>Supervisor</span></a></li>";
+            ?>
+            
+      
+      
     </ul>
   </aside>
 
