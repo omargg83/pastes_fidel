@@ -54,7 +54,34 @@
 		};
 		xhr.send(formData);
 	}
+	function fijar(){
+	  let sidebar;
 
+	  if (document.querySelector(".sidebar_fija")) {
+	    document.getElementById("navx").classList.remove('sidebar_fija');
+	    document.getElementById("contenido").classList.remove('main_fija');
+	    sidebar=0;
+	  }
+	  else{
+	    console.log("no existe");
+	    document.getElementById("navx").classList.add('sidebar_fija');
+	    document.getElementById("contenido").classList.add('main_fija');
+	    sidebar=1;
+	  }
+
+	  var formData = new FormData();
+	  formData.append("function","fija");
+	  formData.append("ctrl", "control");
+	  formData.append("sidebar", sidebar);
+	  let xhr = new XMLHttpRequest();
+	  xhr.open('POST',db_inicial);
+	  xhr.addEventListener('load',(data)=>{
+
+	  });
+	  xhr.onerror =  ()=>{
+	  };
+	  xhr.send(formData);
+	}
 	function fechas () {
 		$.datepicker.regional['es'] = {
 			 closeText: 'Cerrar',

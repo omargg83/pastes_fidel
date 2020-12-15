@@ -386,38 +386,26 @@ label{
 	left: 12px;
 	right: 0px;
 
-
-	background-repeat: no-repeat;
-    background-attachment: fixed ;
-    background-position: top ;
-	-webkit-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-
 	transition: left 1s;
 }
 .main_fija {
-	margin-left: 1px; /* Same as the width of the sidenav */
-	padding: 10px;
-	padding-top:0px;
-	overflow:auto;
-	position: fixed;
-	z-index: 1;
-	top: 70px;
-	bottom: 0px;
+
 	left: 160px;
-	right: 0px;
-
-
-	background-repeat: no-repeat;
-    background-attachment: fixed ;
-    background-position: top ;
-	-webkit-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-
   transition: left 1s;
+
 }
+@media (max-width: 576px) {
+  .sidebar_fija{
+    width: 57px;
+    transition: width 1s;
+  }
+  .main_fija {
+    left: 12px;
+    transition: left 1s;
+  }
+}
+
+
 
 /* Add an active class to the active dropdown button */
 .activeside {
@@ -464,7 +452,6 @@ label{
     display:none;
   }
 }
-
 @media (min-width: 576px) and (max-width: 1199.98px) {
   .main {
 		margin-left: 56px;
