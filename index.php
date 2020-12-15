@@ -168,7 +168,7 @@
 					echo "<div class='fijaproceso main_fija' id='contenido'>";
 				}
 				else{
-					echo "<div class='fijaproceso main' id='contenido'>";
+					echo "<div class='fijaproceso ' id='contenido'>";
 				}
 			?>
 	    </div>

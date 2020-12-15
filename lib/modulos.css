@@ -36,8 +36,24 @@ body {
 
 
 .fijaproceso{
+  margin-left: 1px; /* Same as the width of the sidenav */
+	padding: 10px;
+	padding-top:0px;
+	overflow:auto;
+	position: fixed;
+	z-index: 1;
+	top: 70px;
+	bottom: 0px;
+	left: 12px;
+	right: 0px;
 
+	transition: left 1s;
 }
+.main_fija {
+	left: 160px;
+  transition: left 1s;
+}
+
 .navbar-sagyc {
   border-radius: 10px;
   background-color: #fff4dc !important;
@@ -54,7 +70,6 @@ body {
   background-color: #ece2c6 !important;
   color:red !important;
 }
-
 
 
 .tabla_v{
@@ -374,26 +389,8 @@ label{
 }
 
 /* Main content */
-.main {
-	margin-left: 1px; /* Same as the width of the sidenav */
-	padding: 10px;
-	padding-top:0px;
-	overflow:auto;
-	position: fixed;
-	z-index: 1;
-	top: 70px;
-	bottom: 0px;
-	left: 12px;
-	right: 0px;
 
-	transition: left 1s;
-}
-.main_fija {
 
-	left: 160px;
-  transition: left 1s;
-
-}
 @media (max-width: 576px) {
   .sidebar_fija{
     width: 57px;
@@ -441,9 +438,6 @@ label{
 }
 
 @media (max-width: 576px) {
-	.main{
-		margin-left: 0px;
-	}
 	.fijaproceso{
 		padding-left: 50px;
 		/*width: 98%;*/
@@ -453,23 +447,16 @@ label{
   }
 }
 @media (min-width: 576px) and (max-width: 1199.98px) {
-  .main {
-		margin-left: 56px;
-	}
 	.fijaproceso{
 		margin-left: 1px; /* Same as the width of the sidenav */
 		padding-left: 50px; /* Same as the width of the sidenav */
 	}
 }
 @media (min-width: 1200px) {
-	.main {
-		margin-left: px;
-	}
 	.fijaproceso{
 		margin-left: 1px; /* Same as the width of the sidenav */
 		padding-left: 50px;
 	}
-
 }
 
 /*********************************************************************************/
