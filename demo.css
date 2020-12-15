@@ -1,3 +1,9 @@
+:root {
+  --sidebar-bg-color:#fff;
+  --sidebar--color:#fff;
+}
+
+
 html, body {
   margin: 0;
   padding: 0;
@@ -155,7 +161,7 @@ a {
   grid-area: sidenav;
   height: 100%;
   overflow-y: auto;
-  background-color: #394263;
+  background-color: var(--sidebar-bg-color);;
   color: #FFF;
   width: 240px;
   transform: translateX(-245px);
@@ -184,10 +190,12 @@ a {
   color: rgba(255, 255, 255, 0.5);
   cursor: pointer;
 }
+
+/*   MARCA  */
 .sidenav__brand-link {
   font-size: 18px;
   font-weight: bold;
-  color: #FFF;
+  color: #000;
   margin: 0 15px;
   letter-spacing: 1.5px;
 }
@@ -196,6 +204,7 @@ a {
   align-items: center;
   min-height: 90px;
   background-color: rgba(255, 255, 255, 0.1);
+  color: #000;
 }
 .sidenav__profile-avatar {
   background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1609106/headshot.png");
@@ -235,7 +244,7 @@ a {
   width: 240px;
   padding: 0;
   margin: 0;
-  background-color: #394263;
+  background-color: var(--sidebar-bg-color);;
   list-style-type: none;
 }
 .navList__heading {
@@ -244,14 +253,14 @@ a {
   align-items: center;
   justify-content: space-between;
   padding: 16px 16px 3px;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(0, 0, 0, 0.5);
   text-transform: uppercase;
   font-size: 15px;
 }
 .navList__subheading {
   position: relative;
   padding: 10px 30px;
-  color: #fff;
+  color: #000;
   font-size: 16px;
   text-transform: capitalize;
 }
@@ -260,7 +269,7 @@ a {
   align-items: center;
   justify-content: center;
   font-size: 12px;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(0, 0, 0, 0.5);
   width: 12px;
 }
 .navList__subheading-title {
@@ -273,17 +282,17 @@ a {
   width: 6px;
   top: 17px;
   right: 25px;
-  border-left: 1px solid rgba(255, 255, 255, 0.5);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(10, 10, 10, 0.5);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
   transform: rotate(225deg);
   transition: all .2s;
 }
 .navList__subheading:hover {
-  background-color: #303753;
+  background-color: #fff4dc;
   cursor: pointer;
 }
 .navList__subheading--open {
-  background-color: #303753;
+  background-color: #fff4dc;
 }
 .navList__subheading--open:after {
   transform: rotate(315deg);
@@ -292,7 +301,7 @@ a {
   padding: 0;
   margin: 0;
   list-style-type: none;
-  background-color: #262c43;
+  background-color: #fff4dc;
   visibility: visible;
   overflow: hidden;
   max-height: 200px;
@@ -302,7 +311,7 @@ a {
   padding: 8px;
   text-transform: capitalize;
   padding: 8px 30px;
-  color: #D3D3D3;
+  color: #000;
 }
 .navList .subList__item:first-child {
   padding-top: 15px;
@@ -319,7 +328,7 @@ a {
 .main {
   grid-area: main;
   background-color: #EAEDF1;
-  color: #394263;
+  color: var(--sidebar-bg-color);;
   overflow: auto;
 }
 .main__cards {
@@ -455,7 +464,7 @@ a {
   align-items: center;
   justify-content: space-between;
   height: 50px;
-  background-color: #394263;
+  background-color: var(--sidebar-bg-color);;
   color: #FFF;
 }
 .card__header-title {
@@ -582,7 +591,7 @@ a {
   align-items: center;
   justify-content: center;
   padding: 4px;
-  color: #394263;
+  color: var(--sidebar-bg-color);;
   font-size: 11px;
 }
 .settings__block:not(:last-child) {

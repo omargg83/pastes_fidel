@@ -80,23 +80,21 @@
 	  <div class='content navbar-default'>
 	    <div class='container-fluid'>
 
-					<?php
+				<?php
+					echo "<div class='sidebar";
+					if($_SESSION['sidebar']==1){
+						echo " sidebar_fija";
+					}
+					echo "' id='navx'>";
 
-
-							echo "<div class='sidebar";
-							if($_SESSION['sidebar']==1){
-								echo " sidebar_fija";
-							}
-							echo "' id='navx'>";
-
-					?>
+				?>
 					<div class="sidebar-header">
 						<?php
 						echo "<div class='text-center' style='font-size:14px; width:100%'><b>".$_SESSION['sucursal_nombre']."</b></div>";
 						?>
       		</div>
 					<div class="sidebar-body">
-	        	<a href='#dash/index' is='menu-link' class='activeside'><i class='fas fa-home'></i><span>Inicio</span></a>
+						<a href='#dash/index' is='menu-link' class='activeside'><i class='fas fa-home'></i><span>Inicio</span></a>
 						<?php
 							if((array_key_exists('VENTA', $db->derecho) and $_SESSION['a_sistema']==1) or $_SESSION['nivel']==66)
 							echo "<a href='#a_venta/venta' id='ventax' is='menu-link' title='Pedidos'><i class='fas fa-cash-register'></i><span>+ Venta</span></a>";
@@ -126,7 +124,7 @@
 							echo "<a href='#a_traspasos/index' is='menu-link' title='Traspasos'><i class='fas fa-arrows-alt-h'></i><span>Traspasos</span></a>";
 
 							if(array_key_exists('GASTOS', $db->derecho) or $_SESSION['nivel']==66)
-			        echo "<a href='#a_gastos/index' is='menu-link' title='Datosemp'><i class='fas fa-donate'></i><span>Gastos</span></a>";
+			       			echo "<a href='#a_gastos/index' is='menu-link' title='Datosemp'><i class='fas fa-donate'></i><span>Gastos</span></a>";
 
 							if(array_key_exists('REPORTES', $db->derecho) and $_SESSION['a_sistema']==1)
 							echo "<a href='#a_reporte/index' is='menu-link' title='Reportes'><i class='far fa-chart-bar'></i> <span>Reportes</span></a>";
@@ -135,23 +133,23 @@
 							echo "<a href='#a_usuarios/index' is='menu-link' title='Usuarios'><i class='fas fa-users'></i> <span>Usuarios</span></a>";
 
 							if(array_key_exists('DATOSEMP', $db->derecho) or $_SESSION['nivel']==66)
-			        echo "<a href='#a_datosemp/index' is='menu-link' title='Datos de la empresa'><i class='fas fa-wrench'></i><span>Datos Emp.</span></a>";
+			        		echo "<a href='#a_datosemp/index' is='menu-link' title='Datos de la empresa'><i class='fas fa-wrench'></i><span>Datos Emp.</span></a>";
 
 							if(array_key_exists('SUPERVISOR', $db->derecho) or $_SESSION['nivel']==66)
-			       echo "<a href='#a_supervisor/index' is='menu-link' title='Supervisor'><i class='far fa-eye'></i><span>Supervisor</span></a>";
+			       			echo "<a href='#a_supervisor/index' is='menu-link' title='Supervisor'><i class='far fa-eye'></i><span>Supervisor</span></a>";
 						?>
 					</div>
 
 					<div class="sidebar-footer">
 		        <div class="user-pic">
-							<?php
-								if(strlen($_SESSION['foto'])>0 and file_exists($db->f_usuarios."/".$_SESSION['foto'])){
-									echo "<img class='img-responsive img-rounded' src='".$db->f_usuarios.$_SESSION['foto']."' alt='User picture'>";
-								}
-								else{
-									echo "<img class='img-responsive img-rounded' src='https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg' alt='User picture'>";
-								}
-							?>
+					<?php
+						if(strlen($_SESSION['foto'])>0 and file_exists($db->f_usuarios."/".$_SESSION['foto'])){
+							echo "<img class='img-responsive img-rounded' src='".$db->f_usuarios.$_SESSION['foto']."' alt='User picture'>";
+						}
+						else{
+							echo "<img class='img-responsive img-rounded' src='https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg' alt='User picture'>";
+						}
+					?>
 		        </div>
 		        <div class="user-info" style='width: 80px; white-space: nowrap; text-overflow: ellipsis;overflow: hidden;'>
 		          <span class="user-name" ><?php echo $_SESSION['nombre'] ?></span>
