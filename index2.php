@@ -29,31 +29,94 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="chat/chat.css" />
     <link href="lib/animate.min.css" rel="stylesheet"/>
-    
+
 
   </head>
   <?php
     $valor=$_SESSION['idfondo'];
     echo "<body style='background-image: url(\"$valor\")'>";
   ?>
-    <div class="loader loader-double is-active" id='cargando_div'>
-      <h2><span style='font-color:white'></span></h2>
-    </div>
+  <div class="loader loader-double is-active" id='cargando_div'>
+    <h2><span style='font-color:white'></span></h2>
+  </div>
+
+	<div class="modal" tabindex="-1" role="dialog" id="myModal" data-backdrop="static" data-keyboard="false">
+		<div class="modal-dialog modal-xl" role="document" id='modal_dispo'>
+			<div class="modal-content" id='modal_form'>
+
+			</div>
+		</div>
+	</div>
 
 
   <div class="grid-container">
    <div class="menu-icon">
     <i class="fas fa-bars header__menu"></i>
   </div>
-   
+
   <header class="header">
-    <div class="header__search">Search...</div>
-    <div class="header__avatar">Your face</div>
+    <div class="header__search"><?php echo trim($_SESSION['n_sistema']); ?></div>
+    <div class="header__avatar">
+
+
+      <ul class='nav navbar-nav navbar-right px-1' id='chatx'></ul>
+
+      <?php
+        if($_SESSION['a_sistema']==1){
+          echo "<ul class='nav navbar-nav navbar-right px-1' id='fondo'></ul>";
+        }
+      ?>
+      <ul class='nav navbar-nav navbar-right px-1' id='precios'>
+        <?php
+          if($_SESSION['a_sistema']==1){
+            echo "<li class='nav-item'>";
+          echo "<a class='nav-link pull-left bg-warning rounded' is='b-link' des='a_precios/index' omodal='1'>";
+          echo "<i class='fas fa-search-dollar'></i>";
+          echo "</a>";
+        echo "</li>";
+          }
+        ?>
+      </ul>
+
+
+      <ul class='nav navbar-nav navbar-right px-1'>
+        <li class='nav-item'>
+          <a class='nav-link pull-left border border-warning rounded' onclick='salir()'>
+            <i class='fas fa-sign-out-alt text-red'></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+
   </header>
 
   <aside class="sidenav">
     <div class="sidenav__close-icon">
       <i class="fas fa-times sidenav__brand-close"></i>
+    </div>
+
+
+
+    <div class="sidebar-header">
+      <div class="user-pic">
+        <?php
+          if(strlen($_SESSION['foto'])>0 and file_exists($db->f_usuarios."/".$_SESSION['foto'])){
+            echo "<img class='img-responsive img-rounded' src='".$db->f_usuarios.$_SESSION['foto']."' alt='User picture'>";
+          }
+          else{
+            echo "<img class='img-responsive img-rounded' src='img/user.jpg' alt='User picture'>";
+          }
+        ?>
+      </div>
+      <div class="user-info">
+        <span class="user-name"><?php echo $_SESSION['nombre']; ?>
+        </span>
+        <span class="user-role">Administrator</span>
+        <span class="user-status">
+          <i class="fa fa-circle"></i>
+          <span>Online</span>
+        </span>
+      </div>
     </div>
 
      <div class="sidebar-menu">
@@ -70,80 +133,55 @@
           </li>
 
            <?php
-            /*
-            echo "<ul class='sidenav__list'>";
-              echo "<li class='sidenav__list-item'><a href='#dash/index' is='menu-link'><i class='fas fa-home'></i><span>Inicio</span></a></li>";
-            */
+
               if((array_key_exists('VENTA', $db->derecho) and $_SESSION['a_sistema']==1) or $_SESSION['nivel']==66)
               echo "<li><a href='#a_venta/venta' id='ventax' is='menu-link' title='Pedidos'><i class='fas fa-cash-register'></i><span>+ Venta</span></a></li>";
-            
-              /*
+
               if(array_key_exists('VENTAREGISTRO', $db->derecho) or $_SESSION['nivel']==66)
-              echo "<li class='sidenav__list-item'><a href='#a_ventas/index' id='ventas' is='menu-link' title='Pedidos'><i class='fas fa-shopping-basket'></i><span>Ventas</span></a></li>";
+              echo "<li class=''><a href='#a_ventas/index' id='ventas' is='menu-link' title='Pedidos'><i class='fas fa-shopping-basket'></i><span>Ventas</span></a></li>";
 
               if(array_key_exists('COMPRAS', $db->derecho) or $_SESSION['nivel']==66)
-              echo "<li class='sidenav__list-item'><a href='#a_compras/index' is='menu-link' title='Compras'><i class='fas fa-shopping-bag'></i><span>Compras</span></a></li>";
+              echo "<li class=''><a href='#a_compras/index' is='menu-link' title='Compras'><i class='fas fa-shopping-bag'></i><span>Compras</span></a></li>";
 
               if((array_key_exists('PRODUCTOS', $db->derecho) and $_SESSION['matriz']==1) or $_SESSION['nivel']==66)
-              echo "<li class='sidenav__list-item'><a href='#a_productos/index' is='menu-link' title='Productos'><i class='fab fa-product-hunt'></i><span>Catalogo</span></a></li>";
+              echo "<li class=''><a href='#a_productos/index' is='menu-link' title='Productos'><i class='fab fa-product-hunt'></i><span>Catalogo</span></a></li>";
 
               if(array_key_exists('INVENTARIO', $db->derecho) or $_SESSION['nivel']==66)
-              echo "<li class='sidenav__list-item'><a href='#a_inventario/index' is='menu-link' title='inventario'><i class='fas fa-boxes'></i><span>Inventario</span></a></li>";
+              echo "<li class=''><a href='#a_inventario/index' is='menu-link' title='inventario'><i class='fas fa-boxes'></i><span>Inventario</span></a></li>";
 
               if(array_key_exists('CLIENTES', $db->derecho) or $_SESSION['nivel']==66)
-              echo "<li class='sidenav__list-item'><a href='#a_cliente/index' is='menu-link' title='Clientes'><i class='fas fa-user-tag'></i><span>Clientes</span></a></li>";
+              echo "<li class=''><a href='#a_cliente/index' is='menu-link' title='Clientes'><i class='fas fa-user-tag'></i><span>Clientes</span></a></li>";
 
               if(array_key_exists('CITAS', $db->derecho) or $_SESSION['nivel']==66)
-              echo "<li class='sidenav__list-item'><a href='#a_citas/index' is='menu-link' title='Citas'><i class='far fa-calendar-check'></i><span>Citas/Agenda</span></a></li>";
+              echo "<li class=''><a href='#a_citas/index' is='menu-link' title='Citas'><i class='far fa-calendar-check'></i><span>Citas/Agenda</span></a></li>";
 
               if(array_key_exists('PROVEEDORES', $db->derecho) or $_SESSION['nivel']==66)
-              echo "<li class='sidenav__list-item'><a href='#a_proveedores/index' is='menu-link' title='Proveedores'><i class='fas fa-people-carry'></i><span>Proveedores</span></a></li>";
+              echo "<li class=''><a href='#a_proveedores/index' is='menu-link' title='Proveedores'><i class='fas fa-people-carry'></i><span>Proveedores</span></a></li>";
 
               if(array_key_exists('TRASPASOS', $db->derecho) or $_SESSION['nivel']==66)
-              echo "<li class='sidenav__list-item'><a href='#a_traspasos/index' is='menu-link' title='Traspasos'><i class='fas fa-arrows-alt-h'></i><span>Traspasos</span></a></li>";
+              echo "<li class=''><a href='#a_traspasos/index' is='menu-link' title='Traspasos'><i class='fas fa-arrows-alt-h'></i><span>Traspasos</span></a></li>";
 
               if(array_key_exists('GASTOS', $db->derecho) or $_SESSION['nivel']==66)
-                  echo "<li class='sidenav__list-item'><a href='#a_gastos/index' is='menu-link' title='Datosemp'><i class='fas fa-donate'></i><span>Gastos</span></a></li>";
+                  echo "<li class=''><a href='#a_gastos/index' is='menu-link' title='Datosemp'><i class='fas fa-donate'></i><span>Gastos</span></a></li>";
 
               if(array_key_exists('REPORTES', $db->derecho) and $_SESSION['a_sistema']==1)
-              echo "<li class='sidenav__list-item'><a href='#a_reporte/index' is='menu-link' title='Reportes'><i class='far fa-chart-bar'></i> <span>Reportes</span></a></li>";
+              echo "<li class=''><a href='#a_reporte/index' is='menu-link' title='Reportes'><i class='far fa-chart-bar'></i> <span>Reportes</span></a></li>";
 
               if(array_key_exists('USUARIOS', $db->derecho) or $_SESSION['nivel']==66)
-              echo "<li class='sidenav__list-item'><a href='#a_usuarios/index' is='menu-link' title='Usuarios'><i class='fas fa-users'></i> <span>Usuarios</span></a></li>";
+              echo "<li class=''><a href='#a_usuarios/index' is='menu-link' title='Usuarios'><i class='fas fa-users'></i> <span>Usuarios</span></a></li>";
 
               if(array_key_exists('DATOSEMP', $db->derecho) or $_SESSION['nivel']==66)
-                  echo "<li class='sidenav__list-item'><a href='#a_datosemp/index' is='menu-link' title='Datos de la empresa'><i class='fas fa-wrench'></i><span>Datos Emp.</span></a></li>";
+                  echo "<li class=''><a href='#a_datosemp/index' is='menu-link' title='Datos de la empresa'><i class='fas fa-wrench'></i><span>Datos Emp.</span></a></li>";
 
               if(array_key_exists('SUPERVISOR', $db->derecho) or $_SESSION['nivel']==66)
-                  echo "<li class='sidenav__list-item'><a href='#a_supervisor/index' is='menu-link' title='Supervisor'><i class='far fa-eye'></i><span>Supervisor</span></a></li>";
-              echo "</ul>";
-              */
+                  echo "<li class=''><a href='#a_supervisor/index' is='menu-link' title='Supervisor'><i class='far fa-eye'></i><span>Supervisor</span></a></li>";
+
           ?>
+            <li class="header-menu">
+              <span>Empresa</span>
+            </li>
 
-
-
-          <li class="sidebar-dropdown">
-            <a href="#">
-              <i class="fa fa-tachometer-alt"></i>
-              <span>Dashboard</span>
-            </a>
-            <div class="sidebar-submenu">
-              <ul>
-                <li>
-                  <a href="#">Dashboard 1
-                    
-                  </a>
-                </li>
-                <li>
-                  <a href="#">Dashboard 2</a>
-                </li>
-                <li>
-                  <a href="#">Dashboard 3</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="sidebar-dropdown">
+            <li class="sidebar-dropdown">
             <a href="#">
               <i class="fa fa-shopping-cart"></i>
               <span>E-commerce</span>
@@ -164,102 +202,10 @@
               </ul>
             </div>
           </li>
-          <li class="sidebar-dropdown">
-            <a href="#">
-              <i class="far fa-gem"></i>
-              <span>Components</span>
-            </a>
-            <div class="sidebar-submenu">
-              <ul>
-                <li>
-                  <a href="#">General</a>
-                </li>
-                <li>
-                  <a href="#">Panels</a>
-                </li>
-                <li>
-                  <a href="#">Tables</a>
-                </li>
-                <li>
-                  <a href="#">Icons</a>
-                </li>
-                <li>
-                  <a href="#">Forms</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="sidebar-dropdown">
-            <a href="#">
-              <i class="fa fa-chart-line"></i>
-              <span>Charts</span>
-            </a>
-            <div class="sidebar-submenu">
-              <ul>
-                <li>
-                  <a href="#">Pie chart</a>
-                </li>
-                <li>
-                  <a href="#">Line chart</a>
-                </li>
-                <li>
-                  <a href="#">Bar chart</a>
-                </li>
-                <li>
-                  <a href="#">Histogram</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="sidebar-dropdown">
-            <a href="#">
-              <i class="fa fa-globe"></i>
-              <span>Maps</span>
-            </a>
-            <div class="sidebar-submenu">
-              <ul>
-                <li>
-                  <a href="#">Google maps</a>
-                </li>
-                <li>
-                  <a href="#">Open street map</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="header-menu">
-            <span>Extra</span>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fa fa-book"></i>
-              <span>Documentation</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fa fa-calendar"></i>
-              <span>Calendar</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fa fa-folder"></i>
-              <span>Examples</span>
-            </a>
-          </li>
-        </ul>
+
+          </ul>
       </div>
-      
 
-    
-    
-   
-            
-      
-
-      
-  
   </aside>
 
   <main class="main" id='contenido'>
@@ -344,7 +290,7 @@
 	<script src='lib/fullcalendar-4.0.1/packages/core/locales/es.js'></script>
 
   <!--   Boostrap   -->
-  
+
 	<link rel="stylesheet" href="lib/boostrap/css/bootstrap.css">
 	<script src="lib/boostrap/js/bootstrap.js"></script>
 

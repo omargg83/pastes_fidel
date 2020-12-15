@@ -43,26 +43,28 @@
 	  <button class='navbar-toggler collapsed' type='button' data-toggle='collapse' data-target='#navbarsExample06' aria-controls='navbarsExample06' aria-expanded='false' aria-label='Toggle navigation'>
 	    <span class='navbar-toggler-icon'></span>
 	  </button>
+
+
 	  <div class='navbar-collapse collapse' id='navbarsExample06' style=''>
 
 	    <ul class='navbar-nav mr-auto px-1'></ul>
-			<ul class='nav navbar-nav navbar-right px-1' id='chatx'></ul>
+		<ul class='nav navbar-nav navbar-right px-1' id='chatx'></ul>
+		<?php
+			if($_SESSION['a_sistema']==1){
+				echo "<ul class='nav navbar-nav navbar-right px-1' id='fondo'></ul>";
+			}
+		?>
+		<ul class='nav navbar-nav navbar-right px-1' id='precios'>
 			<?php
 				if($_SESSION['a_sistema']==1){
-      		echo "<ul class='nav navbar-nav navbar-right px-1' id='fondo'></ul>";
-			 	}
+					echo "<li class='nav-item'>";
+						echo "<a class='nav-link pull-left bg-warning rounded' is='b-link' des='a_precios/index' omodal='1'>";
+						echo "<i class='fas fa-search-dollar'></i>";
+						echo "</a>";
+					echo "</li>";
+				}
 			?>
-      <ul class='nav navbar-nav navbar-right px-1' id='precios'>
-				<?php
-					if($_SESSION['a_sistema']==1){
-						echo "<li class='nav-item'>";
-		          echo "<a class='nav-link pull-left bg-warning rounded' is='b-link' des='a_precios/index' omodal='1'>";
-		            echo "<i class='fas fa-search-dollar'></i>";
-		          echo "</a>";
-		        echo "</li>";
-					}
-				?>
-			</ul>
+		</ul>
 
       <ul class='nav navbar-nav navbar-right px-1'>
         <li class='nav-item'>
