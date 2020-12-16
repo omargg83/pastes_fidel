@@ -5,7 +5,7 @@
   --sidebar-marca-color:#fff4dc;
   --sidebar--color:#fff;
   --sidebar-border-color:#ffc107;
-  --sagyc-color:#b4b9d2;
+  --sagyc-color:#768CB0;
 }
 body {
   margin: 0;
@@ -168,9 +168,8 @@ body {
 
   padding: 10px;
   overflow: hidden;
-  /*height: 90px;
-  background-color: var(--sagyc-color);*/
-  background-color: #0C3D7A;
+  /*height: 90px;*/
+  background-color: var(--sagyc-color);
   color:white;
 }
 /*  user pics  */
