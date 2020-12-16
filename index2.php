@@ -55,38 +55,24 @@
   </div>
 
   <header class="header">
+    <img src='img/sagyc.png' width='60' height='30' alt=''>
+    
     <div class="header__search"><?php echo trim($_SESSION['n_sistema']); ?></div>
-    <div class="header__avatar">
-
-
-      <ul class='nav navbar-nav navbar-right px-1' id='chatx'></ul>
-
-      <?php
-        if($_SESSION['a_sistema']==1){
-          echo "<ul class='nav navbar-nav navbar-right px-1' id='fondo'></ul>";
-        }
-      ?>
-      <ul class='nav navbar-nav navbar-right px-1' id='precios'>
-        <?php
-          if($_SESSION['a_sistema']==1){
-            echo "<li class='nav-item'>";
-          echo "<a class='nav-link pull-left bg-warning rounded' is='b-link' des='a_precios/index' omodal='1'>";
-          echo "<i class='fas fa-search-dollar'></i>";
-          echo "</a>";
-        echo "</li>";
-          }
-        ?>
-      </ul>
-
-
-      <ul class='nav navbar-nav navbar-right px-1'>
-        <li class='nav-item'>
-          <a class='nav-link pull-left border border-warning rounded' onclick='salir()'>
-            <i class='fas fa-sign-out-alt text-red'></i>
-          </a>
-        </li>
-      </ul>
-    </div>
+    
+    <div class="header__avatar" id='chatx'></div>
+    <?php
+      if($_SESSION['a_sistema']==1){
+        echo "<button class='btn btn-warning btn-sm' id='fondo'></button>";
+      }
+      if($_SESSION['a_sistema']==1){
+          echo "<button class='btn btn-warning btn-sm' is='b-link' des='a_precios/index' omodal='1'>";
+            echo "<i class='fas fa-search-dollar'></i>";
+          echo "</button>";     
+      }
+    ?>
+      
+    <button class='btn btn-warning btn-sm'  onclick='salir()'><i class='fas fa-sign-out-alt text-red'></i></button>
+        
 
   </header>
 
@@ -97,6 +83,9 @@
 
 
 
+    <?php
+		  echo "<div class='text-center' style='font-size:14px; width:100%'><b>".$_SESSION['sucursal_nombre']."</b></div>";
+    ?>
     <div class="sidebar-header">
       <div class="user-pic">
         <?php
@@ -165,10 +154,10 @@
                   echo "<li class=''><a href='#a_gastos/index' is='menu-link' title='Datosemp'><i class='fas fa-donate'></i><span>Gastos</span></a></li>";
 
               if(array_key_exists('REPORTES', $db->derecho) and $_SESSION['a_sistema']==1)
-              echo "<li class=''><a href='#a_reporte/index' is='menu-link' title='Reportes'><i class='far fa-chart-bar'></i> <span>Reportes</span></a></li>";
+              echo "<li class=''><a href='#a_reporte/index' is='menu-link' title='Reportes'><i class='far fa-chart-bar'></i><span>Reportes</span></a></li>";
 
               if(array_key_exists('USUARIOS', $db->derecho) or $_SESSION['nivel']==66)
-              echo "<li class=''><a href='#a_usuarios/index' is='menu-link' title='Usuarios'><i class='fas fa-users'></i> <span>Usuarios</span></a></li>";
+              echo "<li class=''><a href='#a_usuarios/index' is='menu-link' title='Usuarios'><i class='fas fa-users'></i><span>Usuarios</span></a></li>";
 
               if(array_key_exists('DATOSEMP', $db->derecho) or $_SESSION['nivel']==66)
                   echo "<li class=''><a href='#a_datosemp/index' is='menu-link' title='Datos de la empresa'><i class='fas fa-wrench'></i><span>Datos Emp.</span></a></li>";
@@ -275,8 +264,9 @@
 	<script src="chat/chat.js"></script>
   <script src="sagyc.js"></script>
 	<script src="vainilla.js"></script>
-
-	<link rel="stylesheet" type="text/css" href="lib/modulos.css"/>
+  
+  <link rel="stylesheet" type="text/css" href="lib/modulos.css"/>
+  
 
 	<!--- calendario -->
 	<link href='lib/fullcalendar-4.0.1/packages/core/main.css' rel='stylesheet' />
