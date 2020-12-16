@@ -18,7 +18,7 @@
 
 	<div class='tabla_v' id='tabla_css'>
 		<div class='title-row'>
-			<div class=''>
+			<div>
 				INVENTARIO DE PRODUCTOS
 			</div>
 		</div>

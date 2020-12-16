@@ -50,7 +50,6 @@ body {
   padding: 0 16px;
 }
 
-
 /* Make room for the menu icon on mobile */
 .header__search {
   margin-left: 42px;
@@ -134,7 +133,7 @@ body {
 
 /*------scroll bar---------------------*/
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 15px;
   height: 7px;
 }
 ::-webkit-scrollbar-button {
@@ -142,15 +141,15 @@ body {
   height: 0px;
 }
 ::-webkit-scrollbar-thumb {
-  background: #525965;
+  background: #566552;
   border: 0px none #ffffff;
   border-radius: 0px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #525965;
+  background: var(--sidebar-marca-color);
 }
 ::-webkit-scrollbar-thumb:active {
-  background: #525965;
+  background: var(--sidebar-marca-color);
 }
 ::-webkit-scrollbar-track {
   background: transparent;
@@ -172,6 +171,7 @@ body {
   padding: 10px;
   overflow: hidden;
   height: 90px;
+  background-color: var(--sidebar-marca-color);
 }
 
 /*  user pics  */
@@ -393,3 +393,13 @@ body {
   .sidebar-menu .header-menu span {
     color: #6c7b88;
 }
+
+
+@media (min-width: 990px) and (max-width: 1199.98px) {
+
+  .navbar-sagyc span{
+    display:none;
+  }
+}
+
+
