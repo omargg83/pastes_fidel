@@ -234,7 +234,10 @@
 	<script src="lib/jquery/jquery-ui.js"></script>
 	<link rel="stylesheet" type="text/css" href="lib/jquery/jquery-ui.min.css" />
 
-
+	<!--   Boostrap   -->
+	<link rel="stylesheet" href="lib/boostrap/css/bootstrap.css">
+	<script src="lib/boostrap/js/bootstrap.js"></script>
+	
 	<!--   Alertas   -->
 	<script src="lib/swal/dist/sweetalert2.min.js"></script>
 	<link rel="stylesheet" href="lib/swal/dist/sweetalert2.min.css">
@@ -271,10 +274,7 @@
 	<script src='lib/fullcalendar-4.0.1/packages/timegrid/main.js'></script>
 	<script src='lib/fullcalendar-4.0.1/packages/core/locales/es.js'></script>
 
-  <!--   Boostrap   -->
 
-	<link rel="stylesheet" href="lib/boostrap/css/bootstrap.css">
-	<script src="lib/boostrap/js/bootstrap.js"></script>
 
 
     <script>

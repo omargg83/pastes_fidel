@@ -4,9 +4,11 @@
 <nav class='navbar navbar-expand-lg navbar-sagyc navbar-light  '>
 	<div class='container-fluid'>
 		<a class='navbar-brand' ><i class='fas fa-cash-register'></i> Ventas</a>
-		  <button class='navbar-toggler navbar-toggler-right' type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='principal' aria-expanded='false' aria-label='Toggle navigation'>
-			<span class='navbar-toggler-icon'></span>
+
+			<button class='navbar-toggler navbar-toggler-right' type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='principal' aria-expanded='false' aria-label='Toggle navigation'>
+				<span class='navbar-toggler-icon'></span>
 		  </button>
+
 			  <div class='collapse navbar-collapse' id='navbarSupportedContent'>
 				<form  class='form-inline my-2 my-lg-0' is="b-submit" id="form_lista" des="a_ventas/lista" dix='trabajo'>
 					<div id="search-wrapper">
