@@ -10,12 +10,16 @@
 			<ul class='navbar-nav mr-auto'>
 
 				<form  class='form-inline my-2 my-lg-0' is="b-submit" id="form_lista" des="a_ventas/lista" dix='trabajo'>
-					<div class="input-group  mr-sm-2">
-						<input type="text" class="form-control form-control-sm" placeholder="Buscar" aria-label="Buscar" aria-describedby="basic-addon2"  name='buscar' id='buscar'>
-						<div class="input-group-append">
-							<button class="btn btn-sm" type="submit" ><i class='fas fa-search'></i></button>
-						</div>
+					<div id="search-wrapper">
+					  <input
+					         type="search"
+					         id="search"
+					         placeholder="Buscar"
+					   />
+					  <i class="fa fa-search"></i>
 					</div>
+
+					
 				</form>
 
 				<?php
