@@ -11,15 +11,9 @@
 
 				<form  class='form-inline my-2 my-lg-0' is="b-submit" id="form_lista" des="a_ventas/lista" dix='trabajo'>
 					<div id="search-wrapper">
-					  <input
-					         type="search"
-					         id="search"
-					         placeholder="Buscar"
-					   />
+					  <input type="search" id="buscar" name='buscar' placeholder="Buscar" />
 					  <i class="fa fa-search"></i>
 					</div>
-
-					
 				</form>
 
 				<?php
