@@ -44,7 +44,7 @@ class Usuario extends Sagyc{
 	public function usuario_buscar($texto){
 		$sql="select usuarios.idusuario, usuarios.idtienda, usuarios.archivo, usuarios.correo, usuarios.nombre, usuarios.USER,	usuarios.pass,	usuarios.nivel,	usuarios.activo,tienda.razon AS tienda, usuarios.idsucursal from usuarios
 		left outer join tienda on tienda.idtienda=usuarios.idtienda
-		where usuarios.nombre like '%$texto%' and tienda.idtienda='".$_SESSION['idtienda']."' order by usuarios.idsucursal";
+		where (usuarios.nombre like '%$texto%' or usuarios.correo like '%$texto%')and tienda.idtienda='".$_SESSION['idtienda']."' order by usuarios.idsucursal";
 		$sth = $this->dbh->prepare($sql);
 		$sth->execute();
 		return $sth->fetchAll(PDO::FETCH_OBJ);

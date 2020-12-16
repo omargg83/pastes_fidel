@@ -408,7 +408,6 @@ body {
 
 
 @media (min-width: 990px) and (max-width: 1199.98px) {
-
   .navbar-sagyc span{
     display:none;
   }
@@ -427,9 +426,10 @@ body {
 
 /************* busqueda */
 #search-wrapper {
-  display: flex;
+  display:inline-flex;
   flex-direction: row-reverse;
   width: 150px;
+
 }
 #buscar:hover{
   width: 450px;

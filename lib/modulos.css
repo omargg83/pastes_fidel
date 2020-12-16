@@ -64,6 +64,7 @@ body {
 .navbar-sagyc li:hover{
   background-color: #ece2c6 !important;
   border-radius: 40px;
+  color:black;
 }
 .navbar-sagyc .navbar-toggler{
   background-color: #ece2c6 !important;
