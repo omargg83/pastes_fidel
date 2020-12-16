@@ -4,6 +4,8 @@
   --sidebar-bg-color:#fff;
   --sidebar-marca-color:#fff4dc;
   --sidebar--color:#fff;
+  --sidebar-border-color:#ffc107;
+  --sagyc-color:#b4b9d2;
 }
 body {
   margin: 0;
@@ -12,8 +14,6 @@ body {
   font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
 }
-
-
 /* Assign grid instructions to our parent grid container, mobile-first (hide the sidenav) */
 .grid-container {
   display: grid;
@@ -25,7 +25,6 @@ body {
     'footer';
   height: 100vh;
 }
-
 .menu-icon {
   position: fixed; /* Needs to stay visible for all mobile scrolling */
   display: flex;
@@ -39,7 +38,6 @@ body {
   cursor: pointer;
   padding: 12px;
 }
-
 /* Give every child element its grid name */
 .header {
   background-color: var(--sidebar-bg-color);
@@ -49,7 +47,6 @@ body {
   justify-content: space-between;
   padding: 0 16px;
 }
-
 /* Make room for the menu icon on mobile */
 .header__search {
   margin-left: 42px;
@@ -88,7 +85,6 @@ body {
   overflow: auto;
   padding:10px;
 }
-
 .footer {
   grid-area: footer;
   display: flex;
@@ -141,9 +137,9 @@ body {
   height: 0px;
 }
 ::-webkit-scrollbar-thumb {
-  background: #566552;
+  background: var(--sidebar-bg-color);
   border: 0px none #ffffff;
-  border-radius: 0px;
+  border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--sidebar-marca-color);
@@ -166,14 +162,17 @@ body {
   background: transparent;
 }
 
-
 .sidebar-header {
+  display: flex;
+  flex-direction: row;
+
   padding: 10px;
   overflow: hidden;
-  height: 90px;
-  background-color: var(--sidebar-marca-color);
+  /*height: 90px;
+  background-color: var(--sagyc-color);*/
+  background-color: #0C3D7A;
+  color:white;
 }
-
 /*  user pics  */
 .sidebar-header .user-pic {
  float: left;
@@ -187,9 +186,12 @@ body {
  object-fit: cover;
  height: 100%;
  width: 100%;
+ margin-left: auto;
+ margin-right: auto;
 }
 .sidebar-header .user-info {
  float: left;
+ font-size: 10px;
 }
 .sidebar-header .user-info > span {
  display: block;
@@ -206,7 +208,6 @@ body {
  margin-right: 4px;
  color: #5cb85c;
 }
-
 
 @keyframes swing {
   0% {
@@ -270,6 +271,18 @@ body {
   text-decoration: none;
 }
 
+.sidebar-sucursal{
+  font-size:14px;
+  border:1px solid silver;
+  margin:10px;
+  padding:10px;
+  border-radius:10px;
+  text-align: center;
+  background-color: var(--sidebar-marca-color);
+  -webkit-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75);
+}
 
 .sidebar-menu .header-menu span {
   font-weight: bold;
@@ -281,7 +294,7 @@ body {
   display: inline-block;
   width: 100%;
   text-decoration: none;
-  position: relative;  
+  position: relative;
 }
 .sidebar-menu ul li a:hover {
   background-color: var(--sidebar-marca-color);
@@ -296,7 +309,7 @@ body {
   line-height: 20px;
   text-align: center;
   border-radius: 4px;
-  
+
 }
 
 .sidebar-menu ul li a:hover > i::before {
@@ -370,7 +383,7 @@ body {
  .sidebar-menu ul li a {
     color: #000;
     padding-left: 20px;
-}
+  }
 
   .sidebar-menu ul li:hover>a,
   .sidebar-menu {
@@ -402,4 +415,12 @@ body {
   }
 }
 
+/************* botones */
 
+.btn-warning{
+	background-color: var(--sidebar-marca-color) !important;
+  border-color: var(--sidebar-border-color) !important);
+}
+.btn-warning:hover{
+  background-color: var(--sidebar-border-color) !important;
+}

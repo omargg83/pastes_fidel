@@ -615,7 +615,7 @@
 			$x="";
 			$directory="fondo/";
 			$dirint = dir($directory);
-			echo "<ul class='nav navbar-nav navbar-right'>";
+			echo "<ul class='nav navbar-nav'>";
 				echo "<li class='nav-item dropdown'>";
 					echo "<a class='nav-link dropdown-toggle text-dark' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'><i class='fas fa-desktop text-secondary'></i></a>";
 					echo "<div class='dropdown-menu' aria-labelledby='navbarDropdown' style='width: 200px;max-height: 400px !important;overflow: scroll;overflow-x: scroll;overflow-x: hidden;'>";

@@ -56,9 +56,9 @@
 
   <header class="header">
     <img src='img/sagyc.png' width='60' height='30' alt=''>
-    
+
     <div class="header__search"><?php echo trim($_SESSION['n_sistema']); ?></div>
-    
+
     <div class="header__avatar" id='chatx'></div>
     <?php
       if($_SESSION['a_sistema']==1){
@@ -67,12 +67,11 @@
       if($_SESSION['a_sistema']==1){
           echo "<button class='btn btn-warning btn-sm' is='b-link' des='a_precios/index' omodal='1'>";
             echo "<i class='fas fa-search-dollar'></i>";
-          echo "</button>";     
+          echo "</button>";
       }
     ?>
-      
+
     <button class='btn btn-warning btn-sm'  onclick='salir()'><i class='fas fa-sign-out-alt text-red'></i></button>
-        
 
   </header>
 
@@ -81,26 +80,24 @@
       <i class="fas fa-times sidenav__brand-close"></i>
     </div>
 
-
-
     <?php
-		  echo "<div class='text-center' style='font-size:14px; width:100%'><b>".$_SESSION['sucursal_nombre']."</b></div>";
+		  echo "<div class='sidebar-sucursal' ><b>".$_SESSION['sucursal_nombre']."</b></div>";
     ?>
     <div class="sidebar-header">
       <div class="user-pic">
         <?php
           if(strlen($_SESSION['foto'])>0 and file_exists($db->f_usuarios."/".$_SESSION['foto'])){
-            echo "<img class='img-responsive img-rounded' src='".$db->f_usuarios.$_SESSION['foto']."' alt='User picture'>";
+            echo "<img class='img-responsive rounded-circle' src='".$db->f_usuarios.$_SESSION['foto']."' alt='User picture'>";
           }
           else{
-            echo "<img class='img-responsive img-rounded' src='img/user.jpg' alt='User picture'>";
+            echo "<img class='img-responsive rounded-circle' src='img/user.jpg' alt='User picture'>";
           }
         ?>
       </div>
       <div class="user-info">
         <span class="user-name"><?php echo $_SESSION['nombre']; ?>
         </span>
-        <span class="user-role">Administrator</span>
+        <!--<span class="user-role">Administrator</span> -->
         <span class="user-status">
           <i class="fa fa-circle"></i>
           <span>Online</span>
@@ -153,45 +150,40 @@
               if(array_key_exists('GASTOS', $db->derecho) or $_SESSION['nivel']==66)
                   echo "<li class=''><a href='#a_gastos/index' is='menu-link' title='Datosemp'><i class='fas fa-donate'></i><span>Gastos</span></a></li>";
 
-              if(array_key_exists('REPORTES', $db->derecho) and $_SESSION['a_sistema']==1)
-              echo "<li class=''><a href='#a_reporte/index' is='menu-link' title='Reportes'><i class='far fa-chart-bar'></i><span>Reportes</span></a></li>";
+	            echo "<li class='header-menu'>";
+	              echo "<span>Empresa</span>";
+	            echo "</li>";
+	            echo "<li class='sidebar-dropdown'>";
+		            echo "<a href='#'>";
+		              echo "<i class='fas fa-hand-holding-usd'></i>";
+		              echo "<span>Reportes</span>";
+		            echo "</a>";
+		            echo "<div class='sidebar-submenu'>";
+		              echo "<ul>";
+										if(array_key_exists('REPORTES', $db->derecho) and $_SESSION['a_sistema']==1)
+										echo "<li class=''><a href='#a_reporte/index' is='menu-link' title='Reportes'><i class='far fa-chart-bar'></i><span>Reportes</span></a></li>";
 
-              if(array_key_exists('USUARIOS', $db->derecho) or $_SESSION['nivel']==66)
-              echo "<li class=''><a href='#a_usuarios/index' is='menu-link' title='Usuarios'><i class='fas fa-users'></i><span>Usuarios</span></a></li>";
+										if(array_key_exists('SUPERVISOR', $db->derecho) or $_SESSION['nivel']==66)
+										echo "<li class=''><a href='#a_supervisor/index' is='menu-link' title='Supervisor'><i class='far fa-eye'></i><span>Supervisor</span></a></li>";
+		              echo "</ul>";
+	            	echo "</div>";
+	          	echo "</li>";
+							echo "<li class='sidebar-dropdown'>";
+		            echo "<a href='#'>";
+		              echo "<i class='fas fa-tools'></i>";
+		              echo "<span>Configuración</span>";
+		            echo "</a>";
+		            echo "<div class='sidebar-submenu'>";
+		              echo "<ul>";
+											if(array_key_exists('DATOSEMP', $db->derecho) or $_SESSION['nivel']==66)
+											echo "<li class=''><a href='#a_datosemp/index' is='menu-link' title='Datos de la empresa'><i class='fas fa-wrench'></i><span>Datos Emp.</span></a></li>";
 
-              if(array_key_exists('DATOSEMP', $db->derecho) or $_SESSION['nivel']==66)
-                  echo "<li class=''><a href='#a_datosemp/index' is='menu-link' title='Datos de la empresa'><i class='fas fa-wrench'></i><span>Datos Emp.</span></a></li>";
-
-              if(array_key_exists('SUPERVISOR', $db->derecho) or $_SESSION['nivel']==66)
-                  echo "<li class=''><a href='#a_supervisor/index' is='menu-link' title='Supervisor'><i class='far fa-eye'></i><span>Supervisor</span></a></li>";
-
-          ?>
-            <li class="header-menu">
-              <span>Empresa</span>
-            </li>
-
-            <li class="sidebar-dropdown">
-            <a href="#">
-              <i class="fa fa-shopping-cart"></i>
-              <span>E-commerce</span>
-            </a>
-            <div class="sidebar-submenu">
-              <ul>
-                <li>
-                  <a href="#">Products
-
-                  </a>
-                </li>
-                <li>
-                  <a href="#">Orders</a>
-                </li>
-                <li>
-                  <a href="#">Credit cart</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-
+											if(array_key_exists('USUARIOS', $db->derecho) or $_SESSION['nivel']==66)
+				              echo "<li class=''><a href='#a_usuarios/index' is='menu-link' title='Usuarios'><i class='fas fa-users'></i><span>Usuarios</span></a></li>";
+		              echo "</ul>";
+	            	echo "</div>";
+	          	echo "</li>";
+					?>
           </ul>
       </div>
 
@@ -231,7 +223,7 @@
 
   <footer class="footer">
     <div class="footer__copyright">&copy; 2020 SAGYC</div>
-    <div class="footer__signature">Made with love by pure genius</div>
+    <div class="footer__signature">www.sagyc.com.mx</div>
   </footer>
 </div>
 
@@ -264,9 +256,9 @@
 	<script src="chat/chat.js"></script>
   <script src="sagyc.js"></script>
 	<script src="vainilla.js"></script>
-  
+
   <link rel="stylesheet" type="text/css" href="lib/modulos.css"/>
-  
+
 
 	<!--- calendario -->
 	<link href='lib/fullcalendar-4.0.1/packages/core/main.css' rel='stylesheet' />

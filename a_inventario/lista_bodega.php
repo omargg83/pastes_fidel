@@ -25,23 +25,26 @@
 			echo "</div>";
 		}
 		echo "<br>";
-    echo "<div class='tabla_css' id='tabla_css'>";
-  		echo "<div class='row header-row'>";
+	echo "</div>";
+
+			echo "<div class='tabla_v' id='tabla_css'>";
+
+  		echo "<div class='header-row'>";
 				if($_SESSION['nivel']==66){
-	  			echo "<div class='col-12 col-12 col-sm-12 col-md-6 col-lg-6 col-xl-2'>-</div>";
+	  			echo "<div class='cell'>-</div>";
 				}
-  			echo "<div class='col-12 col-12 col-sm-12 col-md-6 col-lg-6 col-xl-2'>Fecha</div>";
-  			echo "<div class='col-12 col-12 col-sm-12 col-md-6 col-lg-6 col-xl-2'>Tipo</div>";
-  			echo "<div class='col-12 col-12 col-sm-12 col-md-6 col-lg-6 col-xl-2'>Descripción</div>";
-  			echo "<div class='col-12 col-12 col-sm-12 col-md-6 col-lg-6 col-xl-2'>Cantidad</div>";
-  			echo "<div class='col-12 col-12 col-sm-12 col-md-6 col-lg-6 col-xl-2'>Existencia</div>";
+  			echo "<div class='cell'>Fecha</div>";
+  			echo "<div class='cell'>Tipo</div>";
+  			echo "<div class='cell'>Descripción</div>";
+  			echo "<div class='cell'>Cantidad</div>";
+  			echo "<div class='cell'>Existencia</div>";
   		echo "</div>";
 
       $total=0;
 			$contar=0;
       foreach($row as $key){
-        echo "<div class='row body-row' draggable='true'>";
-					echo "<div class='col-12 col-12 col-sm-12 col-md-6 col-lg-6 col-xl-2 '>";
+        echo "<div class='body-row' draggable='true'>";
+					echo "<div class='cell '>";
 						echo "<div class='btn-group'>";
 
 							if($_SESSION['nivel']==66){
@@ -55,10 +58,14 @@
 						echo "</div>";
 
 					echo "</div>";
-          echo "<div class='col-12 col-12 col-sm-12 col-md-6 col-lg-6 col-xl-2 '>";
+          echo "<div class='cell' data-titulo='fecha'>";
             echo fecha($key->fecha,2);
+						if(strlen($key->observaciones)>0){
+							echo "<br>";
+							echo $key->observaciones;
+						}
           echo "</div>";
-          echo "<div class='col-12 col-12 col-sm-12 col-md-6 col-lg-6 col-xl-2 '>";
+          echo "<div class='cell' data-titulo='Tipo'>";
             if($key->cantidad<0 and strlen($key->idcompra)==0 and strlen($key->idpadre)==0 and strlen($key->idventa)==0){
               echo "Descuento";
             }
@@ -82,7 +89,7 @@
 						echo $usuario->nombre;
           echo "</div>";
 
-          echo "<div class='col-12 col-12 col-sm-12 col-md-6 col-lg-6 col-xl-2 text-center'>";
+          echo "<div class='cell text-center' data-titulo='Descripción'>";
 
             if(strlen($key->idtraspaso)>0){
               $sql="select * from traspasos where idtraspaso=$key->idtraspaso";
@@ -116,18 +123,14 @@
 							echo "<br>".$traspaso->nombre;
 						}
           echo "</div>";
-          echo "<div class='col-12 col-12 col-sm-12 col-md-6 col-lg-6 col-xl-2 text-center'>";
+          echo "<div class='cell text-center' data-titulo='Cantidad'>";
             echo $key->cantidad;
           echo "</div>";
-          echo "<div class='col-12 col-12 col-sm-12 col-md-6 col-lg-6 col-xl-2 text-center'>";
+          echo "<div class='cell text-center ' data-titulo='Existencia'>";
             echo $key->existencia;
           echo "</div>";
 
-					if(strlen($key->observaciones)>0){
-						echo "<div class='col-12'>";
-							echo $key->observaciones;
-						echo "</div>";
-					}
+
         echo "</div>";
 				$contar++;
       }

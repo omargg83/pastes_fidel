@@ -45,7 +45,17 @@
 						}
 						echo "</div>";
 					echo "</div>";
-					echo "<div class='cell' data-titulo='Nombre'>".$key->nombre."</div>";
+
+
+					echo "<div class='cell' data-titulo='Nombre'>";
+						if(strlen($key->archivo)>0 and file_exists("../".$db->f_usuarios."/".$key->archivo)){
+							echo "<img src='".$db->f_usuarios."/".$key->archivo."' width='30px' class='img-thumbnail'/>";
+						}
+						else{
+							echo "<img src='img/user.jpg' width='30px' class='img-thumbnail'/>";
+						}
+						echo $key->nombre;
+					echo "</div>";
 					echo "<div class='cell' data-titulo='Correo'>".$key->correo."</div>";
 					echo "<div class='cell' data-titulo='Activo'>";
 						if ($key->activo==0) { echo "Inactivo"; }
