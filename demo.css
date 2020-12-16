@@ -431,10 +431,11 @@ body {
   flex-direction: row-reverse;
   width: 150px;
 }
-
+#buscar:hover{
+  width: 450px;
+}
 #search-wrapper #buscar:hover, #search-wrapper #buscar:hover + i  {
   background-color: #fff;
-
 }
 #search-wrapper #buscar {
   background-color: #f2f2f2;
