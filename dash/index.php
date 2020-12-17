@@ -1,6 +1,30 @@
 <?php
 require_once("../db_.php");
+?>
+<div class="main-overview">
+  <div class="overviewcard">
+    <div class="overviewcard__icon">Nueva Venta
+	<a class='btn btn-warning btn-sm btn-block' id='menu_ventas' is='menu-link' href='#a_venta/venta'>Ir</a>
 
+	</div>
+    <div class="overviewcard__info"><i class='fas fa-cash-register fa-3x'></i></div>
+  </div>
+  <div class="overviewcard">
+    <div class="overviewcard__icon">Overview</div>
+    <div class="overviewcard__info">Card</div>
+  </div>
+  <div class="overviewcard">
+    <div class="overviewcard__icon">Overview</div>
+    <div class="overviewcard__info">Card</div>
+  </div>
+  <div class="overviewcard">
+    <div class="overviewcard__icon">Overview</div>
+    <div class="overviewcard__info">Card</div>
+  </div>
+</div>
+
+
+<?php
 
 echo "<div class='container-fluid'>";
 	echo "<div class='row'>";
@@ -13,8 +37,8 @@ echo "<div class='container-fluid'>";
 						</div>
 						<div class='col-9'>
 							<h5>VENTA</h5>
-							<p class='card-text text-center'>Nueva Venta.</p>
-							<a class='btn btn-warning btn-sm btn-block' id='menu_ventas' is='menu-link' href='#a_venta/venta'>Ir</a>
+							<p class='card-text text-center'>.</p>
+							
 						</div>
 					</div>
 			  </div>
