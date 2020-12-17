@@ -605,7 +605,7 @@ body {
 
 .btn-warning{
 	background-color: var(--sidebar-marca-color) !important;
-  border-color: var(--sidebar-border-color) !important);
+  border-color: var(--sidebar-border-color) !important;
 }
 .btn-warning:hover{
   background-color: var(--sidebar-border-color) !important;
@@ -711,7 +711,7 @@ body {
 
   /*******************************  */
 
-  ul {
+ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
