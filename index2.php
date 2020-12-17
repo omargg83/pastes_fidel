@@ -59,6 +59,21 @@
     <img src='img/sagyc.png' width='60' height='30' alt=''>
     <div class="header__search"><b><?php echo trim($_SESSION['n_sistema']); ?></b></div>
     <div class='header-btn'>
+      
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#news">News</a></li>
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
+          <div class="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+          </div>
+        </li>
+      </ul>
+
+
       <div id='chatx'></div>
       <button class='btn btn-warning btn-sm'  onclick='salir()'><i class='fas fa-sign-out-alt text-red'></i></button>
       <?php
