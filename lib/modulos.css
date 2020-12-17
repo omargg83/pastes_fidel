@@ -18,6 +18,7 @@ body {
 	height: 100%;
 	overflow: hidden;
 }
+
 .principal_menu{
   background-color: var(--menu-bg-color);
   color:black !important;

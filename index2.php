@@ -56,23 +56,21 @@
 
   <header class="header">
     <img src='img/sagyc.png' width='60' height='30' alt=''>
-
-    <div class="header__search"><?php echo trim($_SESSION['n_sistema']); ?></div>
-
-    <div class="header__avatar" id='chatx'></div>
-    <?php
-      if($_SESSION['a_sistema']==1){
-        echo "<button class='btn btn-warning btn-sm' id='fondo'></button>";
-      }
-      if($_SESSION['a_sistema']==1){
-          echo "<button class='btn btn-warning btn-sm' is='b-link' des='a_precios/index' omodal='1'>";
-            echo "<i class='fas fa-search-dollar'></i>";
-          echo "</button>";
-      }
-    ?>
-
-    <button class='btn btn-warning btn-sm'  onclick='salir()'><i class='fas fa-sign-out-alt text-red'></i></button>
-
+    <div class="header__search"><b><?php echo trim($_SESSION['n_sistema']); ?></b></div>
+    <div class='header-btn'>
+      <div id='chatx'></div>
+      <button class='btn btn-warning btn-sm'  onclick='salir()'><i class='fas fa-sign-out-alt text-red'></i></button>
+      <?php
+        if($_SESSION['a_sistema']==1){
+          echo "<button class='btn btn-warning btn-sm' id='fondo'></button>";
+        }
+        if($_SESSION['a_sistema']==1){
+            echo "<button class='btn btn-warning btn-sm' is='b-link' des='a_precios/index' omodal='1'>";
+              echo "<i class='fas fa-search-dollar'></i>";
+            echo "</button>";
+        }
+      ?>
+    </div>
   </header>
 
   <aside class="sidenav">
@@ -260,7 +258,6 @@
   <script src="sagyc.js"></script>
 	<script src="vainilla.js"></script>
 
-  <link rel="stylesheet" type="text/css" href="lib/modulos.css"/>
 
 
 	<!--- calendario -->
