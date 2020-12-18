@@ -23,7 +23,7 @@
 				LISTA DE COMPRAS
 			</div>
 		</div>
-		<div class='row header-row'>
+		<div class='header-row'>
 			<div class='cell'>#</div>
 			<div class='cell'>Fecha</div>
 			<div class='cell'>Numero</div>

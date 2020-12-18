@@ -615,18 +615,12 @@
 			$x="";
 			$directory="fondo/";
 			$dirint = dir($directory);
-			echo "<ul class='nav navbar-nav'>";
-				echo "<li class='nav-item dropdown'>";
-					echo "<a class='nav-link dropdown-toggle text-dark' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'><i class='fas fa-desktop text-secondary'></i></a>";
-					echo "<div class='dropdown-menu' aria-labelledby='navbarDropdown' style='width: 200px;max-height: 400px !important;overflow: scroll;overflow-x: scroll;overflow-x: hidden;'>";
-					while (($archivo = $dirint->read()) !== false){
-						if ($archivo != "." && $archivo != ".." && $archivo != "" && substr($archivo,-4)==".jpg"){
-							echo "<img src='$directory".$archivo."' is='p-fondo' v_fondo='$directory$archivo'alt='Fondo' class='rounded mt-3 mx-3' style='width:140px;height:80px'>";
-						}
-					}
-					echo "</div>";
-				echo "</li>";
-			echo "</ul>";
+
+			while (($archivo = $dirint->read()) !== false){
+				if ($archivo != "." && $archivo != ".." && $archivo != "" && substr($archivo,-4)==".jpg"){
+					echo "<img src='$directory".$archivo."' is='p-fondo' v_fondo='$directory$archivo' alt='Fondo'  style='width:100%;height:80px'>";
+				}
+			}
 			$dirint->close();
 		}
 		public function fondo(){

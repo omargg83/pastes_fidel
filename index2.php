@@ -60,32 +60,28 @@
     <div class="header__search"><b><?php echo trim($_SESSION['n_sistema']); ?></b></div>
     <div class='header-btn'>
       
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#news">News</a></li>
-        <li class="dropdown">
-          <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
-          <div class="dropdown-content">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
-          </div>
-        </li>
+      <ul class='menu'>
+        <?php
+            echo "<li class='dropdown'>";
+              echo "<a class='dropbtn option'><i class='fas fa-desktop text-secondary'></i></a>";
+              echo "<div class='dropdown-content' id='fondo'>";
+              echo "</div>";
+            echo "</li>";
+
+            echo "<li class='dropdown'>";
+              echo  "<a class='dropbtn option'><i class='fab fa-rocketchat fa-spin'></i></a>";
+              echo "<div class='dropdown-content' id='chatx'>";
+              echo "</div>";
+            echo "</li>";
+        
+            if($_SESSION['a_sistema']==1){
+              echo "<li>";
+                echo "<a href='#' class='option' title='Precios' is='b-link' des='a_precios/index' omodal='1'><i class='fas fa-search-dollar'></i></a>";
+              echo "</li>";
+            }
+        ?>
+        <li><a href="#" onclick='salir()' class='option' title='Salir'><i class='fas fa-sign-out-alt text-red'></i></a></li>
       </ul>
-
-
-      <div id='chatx'></div>
-      <button class='btn btn-warning btn-sm'  onclick='salir()'><i class='fas fa-sign-out-alt text-red'></i></button>
-      <?php
-        if($_SESSION['a_sistema']==1){
-          echo "<button class='btn btn-warning btn-sm' id='fondo'></button>";
-        }
-        if($_SESSION['a_sistema']==1){
-            echo "<button class='btn btn-warning btn-sm' is='b-link' des='a_precios/index' omodal='1'>";
-              echo "<i class='fas fa-search-dollar'></i>";
-            echo "</button>";
-        }
-      ?>
     </div>
   </header>
 
