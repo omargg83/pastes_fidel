@@ -31,7 +31,7 @@
           echo "<div class='cell' data-titulo='Fecha'>".fecha($key->fecha,2)."</div>";
 
 
-          echo "<div class='cell text-center'>";
+          echo "<div class='cell'>";
             echo $key->nombrecli;
           echo "</div>";
 
@@ -41,7 +41,7 @@
 
           echo "<div class='cell text-right' >".moneda($key->total)."</div>";
           $monto_t+=$key->total;
-          echo "<div class='cell text-center'>";
+          echo "<div class='cell'>";
             echo $key->estado;
           echo "</div>";
 
