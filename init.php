@@ -10,7 +10,7 @@ $_SESSION['pagina']=50;
     define("BDD", "sagycrmr_pastes_fidel");
     define("PORT", "3306");
     define("SERVER", "LOCALHOST");
-    $_SESSION['des']=0;
+    $_SESSION['des']=1;
   }
   else if($server==3){
     //////////localhost

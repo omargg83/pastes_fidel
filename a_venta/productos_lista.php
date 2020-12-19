@@ -22,15 +22,15 @@
   $res=$sth->fetchAll(PDO::FETCH_OBJ);
 
 	echo "<div class='container'>";
-	echo "<div class='tabla_css' id='tabla_css'>";
-		echo "<div class='row header-row'>";
-			echo "<div class='col-12 col-sm-12 col-md-6 col-lg-6 col-xl-2'>DESCRIPCION</div>";
+	echo "<div class='tabla_v' id='tabla_css'>";
+		echo "<div class='header-row'>";
+			echo "<div class='cell'>DESCRIPCION</div>";
 		echo "</div>";
 
 	  if(count($res)>0){
 	    foreach ($res as $key) {
 	      echo "<div class='row body-row' is='b-card' draggable='true'>";
-					echo "<div class='col-12 col-sm-12 col-md-6 col-lg-6 col-xl-2'>";
+					echo "<div class='cell'>";
 						if($estado_compra=="Activa" and $_SESSION['a_sistema']==1){
 							echo "<div class='btn-group mr-1'>";
 								if($db->nivel_captura==1){

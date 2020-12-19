@@ -8,16 +8,16 @@
 		<div class='title-row'>
 			<div>
 			SUCURSAL
+			</div>
 		</div>
-	</div>
-	<div class='header-row'>
-		<div class='cell'>#</div>
-		<div class='cell'>Nombre</div>
-		<div class='cell'>Ubicación</div>
-		<div class='cell'>Ciudad</div>
-		<div class='cell'>Teléfono 1</div>
-		<div class='cell'>Teléfono 2</div>
-	</div>
+		<div class='header-row'>
+			<div class='cell'>#</div>
+			<div class='cell'>Nombre</div>
+			<div class='cell'>Ubicación</div>
+			<div class='cell'>Ciudad</div>
+			<div class='cell'>Teléfono 1</div>
+			<div class='cell'>Teléfono 2</div>
+		</div>
 
 		<?php
 			foreach($pd as $key){

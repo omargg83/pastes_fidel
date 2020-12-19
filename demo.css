@@ -805,16 +805,20 @@ body {
   background-color: #fff;
   text-decoration: none;
   text-align: center;
-  padding:10px;
+  padding:5px;
   margin:3px;
-  width:50px;
+  width:40px;
   border:1px solid var(--sidebar-marca-color);;
   border-radius: 10px;
   color:#000;
   opacity:.6;
-
+  font-size: .8rem;
 }
 .pag_sagyc a.active{
+  background-color:var(--sidebar-marca-color);
+  opacity:1;
+}
+.pag_sagyc a:hover{
   background-color:var(--sidebar-marca-color);
   opacity:1;
 }
