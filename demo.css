@@ -795,7 +795,6 @@ body {
 
 /*----------------------------- PAGINACION  -----------------------------------*/
 .pag_sagyc{
-
   display: flex;
   justify-content: center;
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
@@ -822,3 +821,51 @@ body {
   background-color:var(--sidebar-marca-color);
   opacity:1;
 }
+
+
+/*----------------------------- PRODUCTOS  -----------------------------------*/
+.sagyc_productos{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  align-content: stretch;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-size: 1.3em;
+  flex-wrap: wrap;
+
+}
+.sagyc_item{
+  width: 150px;
+  height: 150px;
+  background-color: var(--sidebar--color);
+  border:1px solid var(--sidebar-marca-color);
+  margin:5px;
+  padding: 10px;
+  border-radius: 10px;
+  display: inline-block;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  background-color: hsla(0,0%,100%,0.70); 
+  background-blend-mode: overlay;
+  
+}
+.sagyc_item:hover{
+  
+  -webkit-box-shadow: 0px 2px 7px -1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 2px 7px -1px rgba(0,0,0,0.75);
+  box-shadow: 0px 2px 7px -1px rgba(0,0,0,0.75);
+}
+
+.sagyc_item span{
+  position: relative; 
+  text-transform: uppercase;
+  left: 0; 
+  width: 100%; 
+  margin: 0 auto; 
+  width: 300px; 
+  height: 50px; 
+}
+
