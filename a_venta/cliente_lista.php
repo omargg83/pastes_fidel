@@ -14,6 +14,7 @@
 	echo "<div class='tabla_v' id='tabla_css'>";
 		echo "<div class='header-row'>";
 			echo "<div class='cell'>-</div>";
+			echo "<div class='cell'>Nombre</div>";
 			echo "<div class='cell'>Correo</div>";
 			echo "<div class='cell'>Telefono</div>";
 		echo "</div>";
