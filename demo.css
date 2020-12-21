@@ -831,13 +831,14 @@ body {
 
   align-content: stretch;
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-  font-size: 1.3em;
+  font-size: 1em;
   flex-wrap: wrap;
+  font-weight: bold;
 
 }
 .sagyc_item{
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: 120px;
   background-color: var(--sidebar--color);
   border:1px solid var(--sidebar-marca-color);
   margin:5px;
@@ -848,7 +849,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 
-  background-color: hsla(0,0%,100%,0.70); 
+  background-color: hsla(0,0%,100%,0.60); 
   background-blend-mode: overlay;
   
 }
@@ -865,7 +866,6 @@ body {
   left: 0; 
   width: 100%; 
   margin: 0 auto; 
-  width: 300px; 
-  height: 50px; 
+
 }
 

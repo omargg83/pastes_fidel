@@ -100,7 +100,7 @@
       </div>
       <div class='card-body'>
         <div class='row'>
-          <div class='col-sm-12 col-md-12 col-lg-8 col-xl-8'>
+          <div class='col-sm-12 col-md-12 col-lg-8 col-xl-6'>
             <div class='row' id='buscar_form'>
               <?php
                 include 'buscar_form.php';
@@ -113,7 +113,7 @@
             </div>
           </div>
 
-          <div class='col-sm-12 col-md-12 col-lg-4 col-xl-4'>
+          <div class='col-sm-12 col-md-12 col-lg-4 col-xl-6'>
             <div class='row mb-3' id='dato_compra'>
               <?php
                 include 'dato_compra.php';
