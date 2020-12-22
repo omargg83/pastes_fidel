@@ -34,7 +34,7 @@
 			<?php
 
 				foreach($pd as $key){
-					echo "<div class='row body-row' draggable='true'>";
+					echo "<div class='body-row'>";
 						echo "<div class='cell'>";
 							echo "<div class='btn-group'>";
 
