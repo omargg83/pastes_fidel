@@ -2,7 +2,7 @@
   require_once("db_.php");
 	echo "<div class='alert alert-warning'><b>REPORTES</b></div>";
 	echo "<div class='main-overview'>";
-		
+
 
 		if(array_key_exists('REPORTE_VENTAS', $db->derecho)){
 			echo "<div class='overviewcard'>";
@@ -19,6 +19,13 @@
 				echo "</div>";
 				echo "<div class='overviewcard__info'><i class='fas fa-people-carry fa-3x'></i></div>";
 			echo "</div>";
+
+      echo "<div class='overviewcard'>";
+        echo "<a class='btn btn-warning btn-sm btn-block' id='menu_ventas' is='menu-link' href='#a_reporte/reporte7'><i class='far fa-arrow-alt-circle-right'></i></a>";
+        echo "<div class='overviewcard__icon'>Ventas de Extras";
+        echo "</div>";
+        echo "<div class='overviewcard__info'><i class='fab fa-etsy fa-3x'></i></div>";
+      echo "</div>";
 		}
 		if(array_key_exists('REPORTE_CORTE_DE_CAJA', $db->derecho)){
 			echo "<div class='overviewcard'>";
@@ -38,6 +45,6 @@
 			echo "</div>";
 		}
 
-		
+
 	echo "</div>";
 ?>
